@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股研报 & 投资分析 | Research Hub</title>
+<title>A股研报 & 投资分析</title>
 <style>
   :root {
     --bg: #0f1117;
@@ -24,7 +24,7 @@
     min-height: 100vh;
   }
   .container { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
-  
+
   header {
     text-align: center;
     padding: 60px 0 40px;
@@ -40,10 +40,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  header .subtitle {
-    color: var(--text-secondary);
-    font-size: 0.95em;
-  }
+  header .subtitle { color: var(--text-secondary); font-size: 0.95em; }
   header .disclaimer {
     display: inline-block;
     margin-top: 16px;
@@ -54,99 +51,105 @@
     font-size: 0.8em;
     color: #ef4444;
   }
-  .stats-bar {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin: 20px 0 0;
-    font-size: 0.85em;
-    color: var(--text-secondary);
-  }
-  .stats-bar span strong { color: var(--accent); }
+  .stats-bar { display:flex; justify-content:center; gap:32px; margin:20px 0 0; font-size:0.85em; color:var(--text-secondary); }
+  .stats-bar span strong { color:var(--accent); }
 
-  /* 筛选标签栏 */
-  .filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-    justify-content: center;
-  }
+  .filter-bar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; justify-content:center; }
   .filter-tag {
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-secondary);
-    cursor: pointer;
-    font-size: 0.82em;
-    transition: all 0.2s;
-    user-select: none;
+    padding:6px 16px; border-radius:20px; border:1px solid var(--border);
+    background:transparent; color:var(--text-secondary); cursor:pointer;
+    font-size:0.82em; transition:all 0.2s; user-select:none;
   }
-  .filter-tag:hover { border-color: var(--accent-dim); color: var(--text); }
-  .filter-tag.active { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
+  .filter-tag:hover { border-color:var(--accent-dim); color:var(--text); }
+  .filter-tag.active { background:var(--accent); border-color:var(--accent); color:#000; font-weight:600; }
 
   .doc-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 16px;
-    transition: border-color 0.2s, transform 0.15s;
-    cursor: pointer;
+    background:var(--card-bg); border:1px solid var(--border); border-radius:12px;
+    padding:24px; margin-bottom:16px; transition:border-color 0.2s, transform 0.15s; cursor:pointer;
   }
-  .doc-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-  .doc-card h3 {
-    font-size: 1.1em;
-    margin-bottom: 6px;
-  }
-  .doc-card h3 a {
-    color: var(--text);
-    text-decoration: none;
-  }
-  .doc-card h3 a:hover { color: var(--accent); }
-  .doc-card .meta {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    align-items: center;
-    font-size: 0.82em;
-    color: var(--text-secondary);
-  }
-  .doc-card .meta .tag {
-    display: inline-block;
-    padding: 2px 10px;
-    background: var(--tag-bg);
-    border-radius: 10px;
-    font-size: 0.9em;
-  }
-  .doc-card .meta .html-tag { color: #60a5fa; }
-  .doc-card .meta .md-tag { color: #10b981; }
-  .doc-card .meta .text-tag { color: #a78bfa; }
+  .doc-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .doc-card h3 { font-size:1.1em; margin-bottom:6px; }
+  .doc-card h3 a { color:var(--text); text-decoration:none; }
+  .doc-card h3 a:hover { color:var(--accent); }
+  .doc-card .meta { display:flex; gap:12px; flex-wrap:wrap; align-items:center; font-size:0.82em; color:var(--text-secondary); }
+  .doc-card .meta .tag { display:inline-block; padding:2px 10px; background:var(--tag-bg); border-radius:10px; font-size:0.9em; }
+  .doc-card .meta .html-tag { color:#60a5fa; }
+  .doc-card .meta .md-tag { color:#10b981; }
+  .doc-card .meta .text-tag { color:#a78bfa; }
 
-  .loading, .empty {
-    text-align: center;
-    padding: 40px;
-    color: var(--text-secondary);
-  }
+  .loading, .empty { text-align:center; padding:40px; color:var(--text-secondary); }
 
-  footer {
-    text-align: center;
-    padding: 30px 0;
-    color: var(--text-secondary);
-    font-size: 0.8em;
-    border-top: 1px solid var(--border);
-    margin-top: 40px;
+  footer { text-align:center; padding:30px 0; color:var(--text-secondary); font-size:0.8em; border-top:1px solid var(--border); margin-top:40px; }
+  footer a { color:var(--accent); text-decoration:none; }
+
+  /* ---- Reader ---- */
+  #reader { display:none; }
+  #reader.active { display:block; }
+  #list-view.hidden { display:none; }
+  #filter-bar.hidden { display:none; }
+
+  .back-btn {
+    display:inline-flex; align-items:center; gap:6px; padding:8px 18px;
+    border:1px solid var(--border); border-radius:20px; background:var(--card-bg);
+    color:var(--text-secondary); cursor:pointer; font-size:0.88em; margin-bottom:24px;
+    transition:all 0.2s;
   }
-  footer a { color: var(--accent); text-decoration: none; }
+  .back-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .back-btn svg { width:16px; height:16px; }
+
+  .reader-title {
+    font-size:1.8em; font-weight:800; margin-bottom:8px; line-height:1.3;
+    color:var(--text);
+  }
+  .reader-meta { color:var(--text-secondary); font-size:0.85em; margin-bottom:32px; padding-bottom:20px; border-bottom:1px solid var(--border); }
+
+  /* Markdown content styles */
+  .md-content { line-height:1.85; }
+  .md-content h1 { font-size:1.6em; font-weight:700; margin:32px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+  .md-content h2 { font-size:1.3em; font-weight:700; margin:28px 0 12px; }
+  .md-content h3 { font-size:1.1em; font-weight:600; margin:24px 0 10px; color:var(--accent); }
+  .md-content h4 { font-size:1em; font-weight:600; margin:20px 0 8px; }
+  .md-content p { margin:8px 0; }
+  .md-content a { color:var(--accent); }
+  .md-content blockquote {
+    border-left:3px solid var(--accent); padding:8px 16px; margin:16px 0;
+    background:rgba(245,158,11,0.05); border-radius:0 8px 8px 0;
+    color:var(--text-secondary);
+  }
+  .md-content blockquote p { margin:4px 0; }
+  .md-content code {
+    background:var(--tag-bg); padding:2px 6px; border-radius:4px;
+    font-family:"SF Mono","Fira Code","Consolas",monospace; font-size:0.9em;
+  }
+  .md-content pre {
+    background:var(--tag-bg); padding:16px 20px; border-radius:8px; overflow-x:auto;
+    margin:16px 0; border:1px solid var(--border);
+  }
+  .md-content pre code { background:none; padding:0; font-size:0.85em; }
+  .md-content table {
+    width:100%; border-collapse:collapse; margin:16px 0; font-size:0.9em;
+  }
+  .md-content th, .md-content td {
+    border:1px solid var(--border); padding:10px 14px; text-align:left;
+  }
+  .md-content th {
+    background:var(--tag-bg); font-weight:600; color:var(--accent);
+  }
+  .md-content td { background:var(--card-bg); }
+  .md-content ul, .md-content ol { padding-left:24px; margin:8px 0; }
+  .md-content li { margin:4px 0; }
+  .md-content hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
+  .md-content strong { color:var(--text); font-weight:700; }
+  .md-content img { max-width:100%; border-radius:8px; }
+  .md-content em { color:var(--text-secondary); }
+
+  .md-error { color:#ef4444; text-align:center; padding:40px; }
 
   @media (max-width: 600px) {
-    header h1 { font-size: 1.5em; }
-    .container { padding: 20px 16px 60px; }
-    .doc-card { padding: 16px; }
+    header h1 { font-size:1.5em; }
+    .container { padding:20px 16px 60px; }
+    .doc-card { padding:16px; }
+    .reader-title { font-size:1.4em; }
   }
 </style>
 </head>
@@ -164,107 +167,129 @@
   <span class="filter-tag active" data-tag="all">全部</span>
 </nav>
 
-<main id="doc-list">
-  <div class="loading">📂 加载中...</div>
+<main id="list-view">
+  <div id="doc-list"><div class="loading">📂 加载中...</div></div>
+</main>
+
+<main id="reader">
+  <button class="back-btn" id="back-btn">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L5 8l5 5"/></svg>
+    返回目录
+  </button>
+  <h1 class="reader-title" id="reader-title"></h1>
+  <div class="reader-meta" id="reader-meta"></div>
+  <div class="md-content" id="reader-content"></div>
 </main>
 
 <footer>
-  Powered by <a href="https://pages.cloudflare.com" target="_blank">Cloudflare Pages</a> · 
-  <a href="https://github.com" target="_blank">View on GitHub</a>
+  Powered by <a href="https://pages.cloudflare.com" target="_blank">Cloudflare Pages</a> ·
+  <a href="https://github.com/zzhicong001/a-stock-research" target="_blank">View on GitHub</a>
 </footer>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-(async function() {
-  const list = document.getElementById('doc-list');
+(function() {
+  const listView = document.getElementById('list-view');
+  const docList = document.getElementById('doc-list');
   const filterBar = document.getElementById('filter-bar');
   const statsEl = document.getElementById('stats');
-  
+  const reader = document.getElementById('reader');
+  const readerTitle = document.getElementById('reader-title');
+  const readerMeta = document.getElementById('reader-meta');
+  const readerContent = document.getElementById('reader-content');
+  const backBtn = document.getElementById('back-btn');
+
   let allDocs = [];
   let activeTag = 'all';
 
-  // 加载 files.json
-  try {
-    const res = await fetch('files.json');
-    allDocs = await res.json();
-  } catch(e) {
-    list.innerHTML = '<div class="empty">⚠ 无法加载文件清单，请确保 files.json 存在</div>';
-    return;
-  }
+  backBtn.addEventListener('click', showList);
 
-  if (!allDocs.length) {
-    list.innerHTML = '<div class="empty">📭 暂无文档</div>';
-    return;
-  }
+  // 加载
+  fetch('files.json')
+    .then(r => r.json())
+    .then(docs => {
+      allDocs = docs;
+      if (!docs.length) { docList.innerHTML = '<div class="empty">📭 暂无文档</div>'; return; }
+      const total = docs.reduce((s, d) => s + d.files.length, 0);
+      statsEl.innerHTML = `<span>📄 <strong>${docs.length}</strong> 篇报告</span><span>📁 <strong>${total}</strong> 个文件</span>`;
+      buildFilters();
+      renderList();
+    })
+    .catch(() => { docList.innerHTML = '<div class="empty">⚠ 无法加载文件清单</div>'; });
 
-  // 统计
-  const totalFiles = allDocs.reduce((sum, d) => sum + d.files.length, 0);
-  statsEl.innerHTML = `<span>📄 <strong>${allDocs.length}</strong> 篇报告</span><span>📁 <strong>${totalFiles}</strong> 个文件</span>`;
-
-  // 收集所有标签
-  const tagCounts = {};
-  allDocs.forEach(doc => {
-    doc.tags.forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; });
-  });
-
-  // 渲染筛选栏
-  const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
-  sortedTags.forEach(([tag, count]) => {
-    const el = document.createElement('span');
-    el.className = 'filter-tag';
-    el.dataset.tag = tag;
-    el.textContent = `${tag} (${count})`;
-    el.addEventListener('click', () => {
-      filterBar.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      activeTag = tag;
-      render();
+  function buildFilters() {
+    const counts = {};
+    allDocs.forEach(d => d.tags.forEach(t => { counts[t] = (counts[t]||0)+1; }));
+    Object.entries(counts).sort((a,b) => b[1]-a[1]).forEach(([tag, n]) => {
+      const el = document.createElement('span');
+      el.className = 'filter-tag'; el.dataset.tag = tag;
+      el.textContent = `${tag} (${n})`;
+      el.addEventListener('click', () => {
+        filterBar.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+        el.classList.add('active'); activeTag = tag; renderList();
+      });
+      filterBar.appendChild(el);
     });
-    filterBar.appendChild(el);
-  });
+    filterBar.querySelector('[data-tag="all"]').addEventListener('click', function() {
+      filterBar.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+      this.classList.add('active'); activeTag = 'all'; renderList();
+    });
+  }
 
-  // 全部按钮
-  filterBar.querySelector('[data-tag="all"]').addEventListener('click', function() {
-    filterBar.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
-    this.classList.add('active');
-    activeTag = 'all';
-    render();
-  });
-
-  function render() {
-    const filtered = activeTag === 'all' 
-      ? allDocs 
-      : allDocs.filter(d => d.tags.includes(activeTag));
-
-    if (!filtered.length) {
-      list.innerHTML = '<div class="empty">📭 该标签下暂无文档</div>';
-      return;
-    }
-
-    list.innerHTML = filtered.map(doc => {
+  function renderList() {
+    const filtered = activeTag === 'all' ? allDocs : allDocs.filter(d => d.tags.includes(activeTag));
+    if (!filtered.length) { docList.innerHTML = '<div class="empty">📭 该标签下暂无文档</div>'; return; }
+    docList.innerHTML = filtered.map(doc => {
       const primary = doc.files[0];
+      const primaryIsMd = primary.type === 'md';
       const fileLinks = doc.files.map(f => {
-        const cls = f.type === 'html' ? 'html-tag' : f.type === 'md' ? 'md-tag' : 'text-tag';
-        return `<a href="${f.href}" class="tag ${cls}" onclick="event.stopPropagation()">${f.name}</a>`;
+        const cls = f.type === 'html' ? 'html-tag' : 'md-tag';
+        const onclick = f.type === 'md'
+          ? `event.stopPropagation();event.preventDefault();openReader('${f.href}','${escapeHtml(doc.title)}','${doc.date}')`
+          : `event.stopPropagation()`;
+        return `<a href="${f.href}" class="tag ${cls}" onclick="${onclick}" target="${f.type==='html'?'_blank':'_self'}">${f.name}</a>`;
       }).join(' ');
-
       const tags = doc.tags.map(t => `<span class="tag">${t}</span>`).join(' ');
-
-      return `
-      <div class="doc-card" onclick="location.href='${primary.href}'">
-        <h3><a href="${primary.href}">${doc.title}</a></h3>
+      const cardClick = primaryIsMd
+        ? `openReader('${primary.href}','${escapeHtml(doc.title)}','${doc.date}')`
+        : `window.open('${primary.href}','_blank')`;
+      return `<div class="doc-card" onclick="${cardClick}">
+        <h3><a href="${primary.href}" onclick="event.preventDefault()">${doc.title}</a></h3>
         <p style="color:var(--text-secondary);font-size:0.88em;margin:8px 0 12px;">${doc.desc}</p>
-        <div class="meta">
-          <span>📅 ${doc.date}</span>
-          ${tags}
-          <span style="margin-left:auto">${fileLinks}</span>
-        </div>
+        <div class="meta"><span>📅 ${doc.date}</span>${tags}<span style="margin-left:auto">${fileLinks}</span></div>
       </div>`;
     }).join('');
   }
 
-  render();
+  function showList() {
+    reader.classList.remove('active');
+    listView.classList.remove('hidden');
+    filterBar.classList.remove('hidden');
+    window.scrollTo(0, 0);
+  }
+
+  window.openReader = function(href, title, date) {
+    listView.classList.add('hidden');
+    filterBar.classList.add('hidden');
+    reader.classList.add('active');
+    readerTitle.textContent = title;
+    readerMeta.innerHTML = `📅 ${date} · <a href="${href}" target="_blank">查看原始文件</a>`;
+    readerContent.innerHTML = '<div class="loading">📖 加载中...</div>';
+    window.scrollTo(0, 0);
+
+    fetch(href)
+      .then(r => { if (!r.ok) throw new Error('404'); return r.text(); })
+      .then(md => {
+        const html = marked.parse(md);
+        readerContent.innerHTML = html;
+      })
+      .catch(() => { readerContent.innerHTML = '<div class="md-error">⚠ 文件加载失败，请<a href="'+href+'" target="_blank">直接打开</a></div>'; });
+  };
+
+  function escapeHtml(s) { return s.replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  window.escapeHtml = escapeHtml;
 })();
 </script>
 
