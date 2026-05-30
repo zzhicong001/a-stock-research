@@ -405,8 +405,8 @@
             : dayDocs;
           shownDocs.forEach(doc => {
             const primary = doc.files[0];
-            const fTags = doc.files.map(f =>
-              `<span class="mini-tag ${f.type}">${f.name}</span>`
+            const fTags = doc.files.filter(f => f.type === 'md').map(f =>
+              `<span class="mini-tag md">${f.name}</span>`
             ).join('');
             const href = primary.href;
             const isMd = primary.type === 'md';
