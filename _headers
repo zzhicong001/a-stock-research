@@ -1,0 +1,14 @@
+# Cloudflare Pages 部署配置
+# 推送到 GitHub 后，Cloudflare Pages 会自动读取此文件
+
+/*
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff
+
+/*.html
+  Cache-Control: public, max-age=3600
+  Content-Type: text/html; charset=utf-8
+
+/*.md
+  Cache-Control: public, max-age=3600
+  Content-Type: text/markdown; charset=utf-8
