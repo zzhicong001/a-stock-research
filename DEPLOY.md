@@ -6,18 +6,21 @@
 
 ```
 H:\buddy\
-├── index.html              # 首页（暗色主题，从 files.json 动态加载文档目录）
+├── index.html              # 首页（暗色主题，自动目录 + MD 渲染器）
 ├── files.json              # 文档清单（gen_files.js 自动生成）
-├── gen_files.js            # Node.js 扫描脚本，自动发现所有研报文件
+├── gen_files.js            # Node.js 扫描脚本，递归扫描 docs/ 目录
 ├── _headers                # Cloudflare 缓存策略
 ├── README.md               # GitHub 项目说明
 ├── .gitignore              # 排除 .workbuddy、task目录等个人数据
-├── 📄 卖方报告_2026-05-29.md
-├── 📄 戴尔产业链_A股受益标的_2026-05-29.{md,html}
-├── 📄 Anthropic_A股受益标的_2026-05-29.{md,html}
-├── 📄 戴尔概念股_李朋整理_2026-05-29.html
-├── 📄 特朗普Q1持仓盈亏分析_2026-05-30.html
-└── 📄 特朗普个股提及_Q1_2026持仓.html
+└── docs/
+    ├── 2026-05-29/          # 按日期归档
+    │   ├── 卖方报告_2026-05-29.md
+    │   ├── 戴尔产业链_A股受益标的_2026-05-29.{md,html}
+    │   ├── Anthropic_A股受益标的_2026-05-29.{md,html}
+    │   └── 戴尔概念股_李朋整理_2026-05-29.html
+    └── 2026-05-30/
+        ├── 特朗普Q1持仓盈亏分析_2026-05-30.html
+        └── 特朗普个股提及_Q1_2026持仓.html
 ```
 
 **特性：**

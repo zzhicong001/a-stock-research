@@ -8,8 +8,9 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
+const DOCS_DIR = path.join(ROOT, 'docs');
 
-// 不纳入清单的文件（配置类）
+// 不纳入清单的文件名（配置类）
 const SKIP = new Set([
   'README.md', 'CLOUDFLARE_SETUP.md', 'DEPLOY.md', 'index.html',
   '_headers', '.gitignore', 'gen_files.js', 'gen_files.py', 'files.json'
@@ -97,22 +98,39 @@ function autoTags(title, desc, filename) {
   return tags;
 }
 
+function walkDir(dir, relativePrefix) {
+  const results = [];
+  if (!fs.existsSync(dir)) return results;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name))) {
+    if (entry.isDirectory()) {
+      results.push(...walkDir(
+        path.join(dir, entry.name),
+        relativePrefix + entry.name + '/'
+      ));
+    } else if (entry.isFile()) {
+      const name = entry.name;
+      if (SKIP.has(name)) continue;
+      const ext = path.extname(name).toLowerCase();
+      if (ext !== '.md' && ext !== '.html') continue;
+      const fullPath = path.join(dir, name);
+      const relPath = relativePrefix + name;
+      results.push({ fullPath, relPath, name, ext: ext.slice(1) });
+    }
+  }
+  return results;
+}
+
 function scan() {
   const items = [];
-  const files = fs.readdirSync(ROOT);
+  const found = walkDir(DOCS_DIR, 'docs/');
 
-  for (const name of files.sort()) {
-    if (SKIP.has(name)) continue;
-    const ext = path.extname(name).toLowerCase();
-    if (ext !== '.md' && ext !== '.html') continue;
-
-    const filepath = path.join(ROOT, name);
-    const content = fs.readFileSync(filepath, 'utf-8');
-    const title = extractTitle(filepath, content);
-    const date = extractDate(filepath);
-    const desc = extractDesc(filepath, content);
+  for (const { fullPath, relPath, name, ext: ftype } of found) {
+    const content = fs.readFileSync(fullPath, 'utf-8');
+    const title = extractTitle(fullPath, content);
+    const date = extractDate(fullPath);
+    const desc = extractDesc(fullPath, content);
     const tags = autoTags(title, desc, name);
-    const ftype = ext.slice(1); // 'md' or 'html'
 
     items.push({
       filename: name,
@@ -121,7 +139,7 @@ function scan() {
       desc: desc || title,
       tags,
       type: ftype,
-      href: name
+      href: relPath
     });
   }
 

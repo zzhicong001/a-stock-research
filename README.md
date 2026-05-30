@@ -4,27 +4,32 @@ A股产业链深度研究笔记，涵盖 AI 算力、数据中心、美股映射
 
 > ⚠️ 所有内容仅供研究参考，不构成投资建议。
 
-## 浏览
+## 目录结构
 
-访问线上地址查看完整目录（支持标签筛选）：
+```
+├── index.html              # 首页（动态目录 + MD 渲染器）
+├── gen_files.js            # 自动扫描脚本
+├── files.json              # 文档清单（自动生成）
+├── README.md
+├── DEPLOY.md               # 完整部署指南
+├── _headers                # Cloudflare 缓存策略
+└── docs/
+    └── YYYY-MM-DD/         # 按日期归档
+        ├── 报告.md
+        └── 报告.html
+```
+
+## 浏览
 
 ```
 https://你的项目名.pages.dev
 ```
 
-文档目录由首页自动生成，无需手动维护。
-
-## 部署
-
-本仓库通过 GitHub → Cloudflare Pages 自动部署，推送即发布。
-
-> [📖 完整部署方案](DEPLOY.md) — 从零到上线，每一步都写好了
-
-**快速流程：**
+## 使用
 
 ```bash
-# 新增研报后只需
-git add 新文件.html
+# 新增研报：放入 docs/YYYY-MM-DD/ 文件夹，然后
+git add docs/
 git commit -m "新增研报"
 git push
 # Cloudflare 自动构建部署，首页自动更新
