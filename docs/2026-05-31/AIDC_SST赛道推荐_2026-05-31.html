@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AIDC SST赛道深度推荐：固态变压器产业趋势明确，阳光、华为、台达巨头布局，A股受益标的梳理">
+<title>AIDC · SST赛道持续推荐 — A股受益标的梳理</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card-bg: #1a1d28;
+    --text: #e4e6eb;
+    --text-secondary: #9ca3af;
+    --accent: #f59e0b;
+    --red: #ef4444;
+    --green: #10b981;
+    --blue: #60a5fa;
+    --border: #2d3148;
+    --tag-bg: #1e293b;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.85;
+    padding: 40px 20px 80px;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+
+  h1 {
+    font-size: 2em; font-weight: 800; margin-bottom: 6px; line-height: 1.3;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .subtitle { color: var(--text-secondary); font-size: 0.92em; margin-bottom: 8px; }
+  .meta {
+    display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.82em; color: var(--text-secondary);
+    padding-bottom: 20px; margin-bottom: 32px; border-bottom: 1px solid var(--border);
+  }
+  .meta .tag {
+    padding: 2px 12px; background: var(--tag-bg); border-radius: 12px; font-size: 0.9em;
+    color: var(--accent);
+  }
+  .disclaimer {
+    padding: 10px 18px; background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 8px; font-size: 0.8em; color: var(--red); margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: 1.35em; font-weight: 700; margin: 36px 0 16px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2 .num { color: var(--accent); margin-right: 8px; }
+  h3 {
+    font-size: 1.1em; font-weight: 600; margin: 24px 0 10px; color: var(--accent);
+  }
+
+  p { margin: 10px 0; }
+  strong { font-weight: 700; }
+
+  .highlight-box {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px 24px; margin: 20px 0;
+  }
+  .highlight-box h4 { font-size: 1em; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+  .highlight-box p { margin: 4px 0; font-size: 0.9em; }
+
+  .insight-block {
+    border-left: 3px solid var(--accent); padding: 12px 18px; margin: 20px 0;
+    background: rgba(245,158,11,0.05); border-radius: 0 8px 8px 0;
+  }
+  .insight-block p { margin: 4px 0; color: var(--text-secondary); }
+  .insight-block strong { color: var(--text); }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9em;
+  }
+  th, td {
+    border: 1px solid var(--border); padding: 10px 14px; text-align: left;
+  }
+  th {
+    background: var(--tag-bg); font-weight: 600; color: var(--accent); font-size: 0.9em;
+  }
+  td { background: var(--card-bg); }
+  td.stock { font-weight: 700; white-space: nowrap; }
+  td.logic { color: var(--text-secondary); font-size: 0.88em; }
+
+  .card-row {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px; margin: 16px 0;
+  }
+  .stock-card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px; transition: border-color 0.2s;
+  }
+  .stock-card:hover { border-color: var(--accent-dim); }
+  .stock-card .name { font-weight: 700; font-size: 1.05em; margin-bottom: 4px; }
+  .stock-card .name .code { font-size: 0.8em; color: var(--text-secondary); font-weight: 400; margin-left: 6px; }
+  .stock-card .desc { font-size: 0.85em; color: var(--text-secondary); line-height: 1.6; }
+  .stock-card .role {
+    display: inline-block; padding: 2px 10px; background: var(--tag-bg);
+    border-radius: 8px; font-size: 0.75em; margin-top: 8px; color: var(--accent);
+  }
+
+  .logic-flow {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    padding: 16px 0; font-size: 0.9em;
+  }
+  .logic-step {
+    padding: 8px 14px; background: var(--tag-bg); border-radius: 8px;
+    white-space: nowrap; font-size: 0.85em;
+  }
+  .logic-arrow { color: var(--accent); font-weight: 700; }
+
+  footer {
+    text-align: center; padding: 40px 0 0; margin-top: 40px;
+    border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8em;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.4em; }
+    .card-row { grid-template-columns: 1fr; }
+    .logic-flow { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>AIDC · SST赛道持续推荐</h1>
+<p class="subtitle">固态变压器产业趋势确认，A股受益标的梳理</p>
+<div class="meta">
+  <span>📅 2026-05-31</span>
+  <span class="tag">AIDC电源</span>
+  <span class="tag">SST</span>
+  <span class="tag">产业链</span>
+</div>
+
+<div class="disclaimer">⚠ 本报告仅供研究参考，不构成投资建议</div>
+
+<!-- ===== 一、核心逻辑 ===== -->
+<h2><span class="num">一</span>SST是明确的产业趋势</h2>
+
+<div class="insight-block">
+  <p><strong>阳光电源董事长曹仁贤：</strong>SST是千亿甚至万亿级市场，计划"三年再造一个阳光"。</p>
+</div>
+
+<div class="insight-block">
+  <p><strong>华为：</strong>2026年5月15日召开AIDC发布会，提出"Watt重构"理念——从电网到芯片，全链重构供电链路，明确布局SST。</p>
+</div>
+
+<div class="insight-block">
+  <p><strong>台达（Delta）：</strong>全球SST技术领先，积极对接北美CSP客户。</p>
+</div>
+
+<div class="highlight-box">
+  <h4>📌 核心结论</h4>
+  <p>国内外巨头及优秀电力电子公司均明确SST技术路线，产业趋势已无争议。当前处于产业化早期，是布局窗口期。</p>
+</div>
+
+<!-- ===== 投资主线 ===== -->
+<h2><span class="num">二</span>SST投资主线</h2>
+
+<h3>主线1：核心卡位 — 被动元器件</h3>
+
+<div class="card-row">
+  <div class="stock-card">
+    <div class="name">法拉电子<span class="code">600563</span></div>
+    <div class="desc">全球薄膜电容龙头，SST核心被动元器件供应商，技术壁垒高，确定性受益产业放量。</div>
+    <span class="role">核心推荐</span>
+  </div>
+</div>
+
+<h3>主线2：SST整机供应商</h3>
+
+<table>
+  <tr><th>标的</th><th>代码</th><th>核心逻辑</th><th>评级</th></tr>
+  <tr>
+    <td class="stock">四方股份</td>
+    <td>601126</td>
+    <td class="logic">SST研发进度最快，有望率先落地</td>
+    <td style="color:var(--accent);font-weight:700">推荐</td>
+  </tr>
+  <tr>
+    <td class="stock">金盘科技</td>
+    <td>688788</td>
+    <td class="logic">SST进度领先，产品储备丰富</td>
+    <td style="color:var(--accent);font-weight:700">推荐</td>
+  </tr>
+  <tr>
+    <td class="stock">阳光电源</td>
+    <td>300274</td>
+    <td class="logic">头部电力电子公司，董事长亲推SST战略方向</td>
+    <td style="color:var(--accent);font-weight:700">推荐</td>
+  </tr>
+  <tr>
+    <td class="stock">中恒电气</td>
+    <td>002364</td>
+    <td class="logic">宁德时代赋能，电力电子平台型公司布局SST</td>
+    <td style="color:var(--accent);font-weight:700">推荐</td>
+  </tr>
+</table>
+
+<h3>主线3：其余核心元器件</h3>
+
+<table>
+  <tr><th>标的</th><th>代码</th><th>细分方向</th><th>核心逻辑</th></tr>
+  <tr>
+    <td class="stock">京泉华</td>
+    <td>002885</td>
+    <td>高压隔离变</td>
+    <td class="logic">SST关键隔离元件供应商</td>
+  </tr>
+  <tr>
+    <td class="stock">良信股份</td>
+    <td>002706</td>
+    <td>固态断路器</td>
+    <td class="logic">SST配套保护器件，固态断路器趋势受益</td>
+  </tr>
+  <tr>
+    <td class="stock">宏发股份</td>
+    <td>600885</td>
+    <td>高压直流继电器</td>
+    <td class="logic">全球继电器龙头，高压直流产品适配SST场景</td>
+  </tr>
+  <tr>
+    <td class="stock">中熔电气</td>
+    <td>301031</td>
+    <td>熔断器</td>
+    <td class="logic">熔断器隐形冠军，SST保护环节核心供应商</td>
+  </tr>
+</table>
+
+<!-- ===== AIDC 电源 ===== -->
+<h2><span class="num">三</span>AIDC电源</h2>
+
+<div class="insight-block">
+  <p><strong>投资逻辑：</strong>关注订单落地与客户绑定深度，AIDC建设加速带来电源设备确定性增量。</p>
+</div>
+
+<table>
+  <tr><th>标的</th><th>代码</th><th>方向</th><th>核心逻辑</th></tr>
+  <tr>
+    <td class="stock">科士达</td>
+    <td>002518</td>
+    <td>ODM核心</td>
+    <td class="logic">AIDC电源ODM龙头，客户绑定深度最高</td>
+  </tr>
+  <tr>
+    <td class="stock">盛弘股份</td>
+    <td>300693</td>
+    <td>中压UPS</td>
+    <td class="logic">数据中心中压UPS供应商，受益AIDC高功率密度趋势</td>
+  </tr>
+  <tr>
+    <td class="stock">英威腾</td>
+    <td>002334</td>
+    <td>低压变频</td>
+    <td class="logic">工业自动化龙头，数据中心电源业务处于低位，估值修复空间大</td>
+  </tr>
+</table>
+
+<!-- ===== 汇总 ===== -->
+<h2><span class="num">四</span>全链条汇总</h2>
+
+<table>
+  <tr><th>层级</th><th>标的</th><th>代码</th><th>市值参考</th><th>确定性</th></tr>
+  <tr>
+    <td rowspan="1" style="text-align:center;font-weight:700;color:var(--green);">被动元器件</td>
+    <td class="stock">法拉电子</td><td>600563</td><td>大市值</td>
+    <td style="color:var(--green);font-weight:700">★★★</td>
+  </tr>
+  <tr>
+    <td rowspan="4" style="text-align:center;font-weight:700;color:var(--accent);">SST整机</td>
+    <td class="stock">四方股份</td><td>601126</td><td>中市值</td>
+    <td style="color:var(--accent);font-weight:700">★★☆</td>
+  </tr>
+  <tr>
+    <td class="stock">金盘科技</td><td>688788</td><td>中市值</td>
+    <td style="color:var(--accent);font-weight:700">★★☆</td>
+  </tr>
+  <tr>
+    <td class="stock">阳光电源</td><td>300274</td><td>大市值</td>
+    <td style="color:var(--accent);font-weight:700">★★★</td>
+  </tr>
+  <tr>
+    <td class="stock">中恒电气</td><td>002364</td><td>中市值</td>
+    <td style="color:var(--accent);font-weight:700">★★☆</td>
+  </tr>
+  <tr>
+    <td rowspan="4" style="text-align:center;font-weight:700;color:var(--blue);">核心元器件</td>
+    <td class="stock">京泉华</td><td>002885</td><td>小市值</td>
+    <td style="color:var(--blue)">★★☆</td>
+  </tr>
+  <tr>
+    <td class="stock">良信股份</td><td>002706</td><td>中市值</td>
+    <td style="color:var(--blue)">★★☆</td>
+  </tr>
+  <tr>
+    <td class="stock">宏发股份</td><td>600885</td><td>中市值</td>
+    <td style="color:var(--blue)">★★☆</td>
+  </tr>
+  <tr>
+    <td class="stock">中熔电气</td><td>301031</td><td>小市值</td>
+    <td style="color:var(--blue)">★★☆</td>
+  </tr>
+  <tr>
+    <td rowspan="3" style="text-align:center;font-weight:700;color:#a78bfa;">AIDC电源</td>
+    <td class="stock">科士达</td><td>002518</td><td>中市值</td>
+    <td style="color:#a78bfa">★★★</td>
+  </tr>
+  <tr>
+    <td class="stock">盛弘股份</td><td>300693</td><td>小市值</td>
+    <td style="color:#a78bfa">★★☆</td>
+  </tr>
+  <tr>
+    <td class="stock">英威腾</td><td>002334</td><td>中市值</td>
+    <td style="color:#a78bfa">★★☆</td>
+  </tr>
+</table>
+
+<div class="highlight-box" style="margin-top:28px;">
+  <h4>📌 配置思路</h4>
+  <p><strong>确定性优先：</strong>法拉电子（被动元器件全球龙头，SST确定性受益）→ 阳光电源（大市值电力电子龙头）→ 科士达（AIDC电源ODM龙头）</p>
+  <p><strong>弹性优先：</strong>四方股份 / 金盘科技（SST整机进度领先，市值弹性大）</p>
+  <p><strong>底部布局：</strong>英威腾（估值低位，数据中心电源业务拐点）</p>
+</div>
+
+<footer>
+  数据来源：券商研报、产业调研 · 整理时间：2026-05-31 ·
+  <a href="https://github.com/zzhicong001/a-stock-research" target="_blank">GitHub</a>
+</footer>
+
+</div>
+</body>
+</html>
