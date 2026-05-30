@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特朗普Q1买入个股盈亏分析</title>
+<style>
+  :root{--bg:#f8f9fb;--card:#fff;--text:#1a1a2e;--red:#dc2626;--green:#16a34a;--blue:#2563eb;--border:#e5e7eb;--amber:#d97706}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:24px 16px 60px}
+  .container{max-width:920px;margin:0 auto}
+  .hero{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:20px}
+  .hero h1{font-size:24px;font-weight:700;margin-bottom:6px}
+  .hero .sub{font-size:13px;color:#94a3b8}
+
+  .section{background:var(--card);border-radius:12px;padding:24px 32px;margin-bottom:16px;border:1px solid var(--border)}
+  .section h2{font-size:18px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:8px}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+  th{background:#f1f5f9;font-weight:600;padding:10px 14px;text-align:left;font-size:13px;color:#475669;white-space:nowrap}
+  td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+  tr:hover td{background:#f8fafc}
+  .ticker{font-family:"SF Mono","Consolas",monospace;color:var(--blue);font-weight:600}
+  .loss{color:#dc2626;font-weight:700}
+  .flat{color:#d97706;font-weight:600}
+  .win{color:#16a34a;font-weight:600}
+  .fire{background:#fef2f2}
+  .warn{background:#fffbeb}
+  .good{background:#f0fdf4}
+
+  blockquote{border-left:3px solid var(--amber);padding:10px 16px;margin:12px 0;background:#fffbeb;border-radius:0 8px 8px 0;font-size:13px;color:#92400e}
+
+  .note{font-size:13px;color:#6b7280;margin:10px 0;padding:12px 16px;background:#f8fafc;border-radius:8px}
+
+  @media(max-width:640px){.hero{padding:24px 20px}.hero h1{font-size:20px}.section{padding:18px 14px}table{font-size:12px}th,td{padding:8px 10px}}
+</style>
+</head>
+<body><div class="container">
+<div class="hero">
+  <h1>特朗普 Q1 买入个股 · 盈亏分析</h1>
+  <div class="sub">当前价格截止 2026-05-29 收盘 | Q1 买入价格基于区间估算 | ⚠️ OGE披露仅给金额区间，非精确价</div>
+</div>
+
+<!-- UNDERWATER -->
+<div class="section">
+  <h2>🔴 亏损 / 盈利低于 10%（高概率）</h2>
+  <table>
+    <tr><th>股票</th><th>代码</th><th>Q1买入区间(估)</th><th>当前价</th><th>估算盈亏</th><th>原因</th></tr>
+    <tr class="fire">
+      <td class="ticker">ServiceNow</td><td>NOW</td><td>$100–200</td><td>$124.37</td><td class="loss">-8% ~ -38%</td>
+      <td>SaaS板块遭"末日"抛售，市值从2330亿跌至980亿，5月刚反弹</td>
+    </tr>
+    <tr class="fire">
+      <td class="ticker">Adobe</td><td>ADBE</td><td>$230–350</td><td>$259.21</td><td class="loss">-5% ~ -25%</td>
+      <td>从$421高点腰斩，AI颠覆焦虑压制估值，PE仅15倍</td>
+    </tr>
+    <tr class="warn">
+      <td class="ticker">Thermo Fisher</td><td>TMO</td><td>$458–520(3.11)</td><td>$492.51</td><td class="flat">-5% ~ +7%</td>
+      <td>从1月$644高点跌至5月$435低位，近期反弹但仍远低于买入时</td>
+    </tr>
+    <tr class="warn">
+      <td class="ticker">Motorola</td><td>MSI</td><td>$370–490</td><td>$403.28</td><td class="flat">-8% ~ +9%</td>
+      <td>52周高$492，当前处于区间中下部</td>
+    </tr>
+  </table>
+</div>
+
+<!-- BREAKEVEN -->
+<div class="section">
+  <h2>🟡 盈亏边缘 / 不足 10%</h2>
+  <table>
+    <tr><th>股票</th><th>代码</th><th>Q1买入区间(估)</th><th>当前价</th><th>估算盈亏</th><th>备注</th></tr>
+    <tr class="warn">
+      <td class="ticker">Apple</td><td>AAPL</td><td>$230–270</td><td>~$260</td><td class="flat">~0% ~ +13%</td>
+      <td>3月集中买入$200-720万，同期演讲夸库克。股价波动区间内</td>
+    </tr>
+    <tr class="warn">
+      <td class="ticker">Oracle</td><td>ORCL</td><td>$160–200</td><td>$225.78</td><td class="flat">+13% ~ +41%</td>
+      <td>5.29单日+10.8%。若在Q1后半买入(>$180)，盈利约13-25%</td>
+    </tr>
+    <tr class="warn">
+      <td class="ticker">Alphabet</td><td>GOOGL</td><td>$170–210</td><td>~$200-220</td><td class="flat">~0% ~ +15%</td>
+      <td>11笔买入，无卖出。股价波动较窄</td>
+    </tr>
+  </table>
+</div>
+
+<!-- WINNERS -->
+<div class="section">
+  <h2>🟢 大幅盈利（远超 10%）</h2>
+  <table>
+    <tr><th>股票</th><th>代码</th><th>Q1买入区间(估)</th><th>当前价</th><th>估算盈亏</th><th>催化剂</th></tr>
+    <tr class="good">
+      <td class="ticker">Dell</td><td>DELL</td><td>$105–130(2.10)</td><td>$420.91</td><td class="win">+224% ~ +300%</td>
+      <td>AI服务器财报炸裂，5.29单日+33%。Q1最佳交易</td>
+    </tr>
+    <tr class="good">
+      <td class="ticker">Texas Instruments</td><td>TXN</td><td>$175–222</td><td>$305.68</td><td class="win">+38% ~ +75%</td>
+      <td>AI数据中心需求+90%，4.23单日+18%，历史新高</td>
+    </tr>
+    <tr class="good">
+      <td class="ticker">Nvidia</td><td>NVDA</td><td>$120–150</td><td>~$180-200</td><td class="win">+20% ~ +50%</td>
+      <td>AI算力王者，2.10买入后一周Meta宣布重大交易</td>
+    </tr>
+    <tr class="good">
+      <td class="ticker">Broadcom</td><td>AVGO</td><td>$200–250</td><td>~$280-350</td><td class="win">+20% ~ +50%</td>
+      <td>Google TPU + AI ASIC双引擎</td>
+    </tr>
+    <tr class="good">
+      <td class="ticker">Micron</td><td>MU</td><td>$90–110(3.25)</td><td>~$120-140</td><td class="win">+10% ~ +50%</td>
+      <td>HBM存储需求爆发，3.25买入次日福克斯喊话</td>
+    </tr>
+    <tr class="good">
+      <td class="ticker">Palantir</td><td>PLTR</td><td>$150–200</td><td>~$180-220</td><td class="win">+10% ~ +20%</td>
+      <td>AI军工概念，买入后Truth Social提及</td>
+    </tr>
+  </table>
+</div>
+
+<!-- SUMMARY -->
+<div class="section">
+  <h2>📊 盈亏分布速览</h2>
+  <table>
+    <tr><th>状态</th><th>数量</th><th>代表标的</th><th>亏损金额估算</th></tr>
+    <tr class="fire"><td><strong>🔴 高概率亏损</strong></td><td>2–3只</td><td>NOW、ADBE</td><td>每只买入 $1M-5M，若跌20% = -$200K ~ -$1M</td></tr>
+    <tr class="warn"><td><strong>🟡 盈亏边缘</strong></td><td>3–4只</td><td>TMO、MSI、AAPL</td><td>基本打平，小幅正负</td></tr>
+    <tr class="good"><td><strong>🟢 大幅盈利</strong></td><td>6–8只</td><td>DELL、TXN、NVDA、AVGO、MU</td><td>DELL单笔可能盈利 $2M-15M</td></tr>
+  </table>
+  <blockquote>
+    整体来看，特朗普Q1组合大概率是盈利的——DELL和TXN的暴赚完全覆盖了NOW和ADBE的亏损。但"先买后吹"的策略在NOW、ADBE、TMO上失灵了，这些股票对总统喊话"免疫"。
+  </blockquote>
+</div>
+
+<div class="note">
+  <strong>⚠️ 数据说明：</strong><br>
+  · OGE披露文件仅提供交易金额区间（如$1M-$5M），不披露精确买入价和股数<br>
+  · Q1买入时间窗口为1月-3月，不同买入时点价格差异可能很大<br>
+  · 当前价格为2026年5月29日收盘价或最新可得数据<br>
+  · 盈亏估算仅供参考，实际盈亏取决于具体买入时点和金额
+</div>
+
+</div></body></html>

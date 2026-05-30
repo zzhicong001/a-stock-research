@@ -1,0 +1,13 @@
+# WorkBuddy 个人工作数据
+.workbuddy/
+
+# 任务工作目录
+2026-05-30-task-1/
+2026-05-30-task-2/
+
+# 其他
+Claw/
+
+# 系统文件
+Thumbs.db
+.DS_Store

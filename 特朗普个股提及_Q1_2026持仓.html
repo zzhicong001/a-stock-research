@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特朗普提及个股 & Q1 2026交易记录</title>
+<style>
+  :root{--bg:#f8f9fb;--card:#fff;--text:#1a1a2e;--red:#dc2626;--green:#16a34a;--blue:#2563eb;--border:#e5e7eb;--gold:#d97706}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:24px 16px 60px}
+  .container{max-width:900px;margin:0 auto}
+
+  .hero{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px;box-shadow:0 4px 24px rgba(0,0,0,.15)}
+  .hero h1{font-size:26px;font-weight:700;margin-bottom:8px}
+  .hero .sub{font-size:13px;color:#94a3b8;line-height:1.8}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.12);color:#fbbf24;font-size:11px;padding:2px 10px;border-radius:10px;margin-right:6px;font-weight:600}
+
+  .section{background:var(--card);border-radius:12px;padding:28px 32px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid var(--border)}
+  .section h2{font-size:19px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:8px}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+  th{background:#f1f5f9;font-weight:600;padding:10px 14px;text-align:left;font-size:13px;color:#475569;white-space:nowrap}
+  td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+  tr:hover td{background:#f8fafc}
+  .ticker{font-family:"SF Mono","Consolas",monospace;color:var(--blue);font-weight:600;white-space:nowrap}
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+  .b-buy{background:#fee2e2;color:#dc2626}
+  .b-sell{background:#dcfce7;color:#16a34a}
+  .b-post{background:#dbeafe;color:#2563eb}
+  .b-sus{background:#fef3c7;color:#d97706}
+  .fire{color:#dc2626;font-weight:600}
+
+  blockquote{border-left:3px solid var(--gold);padding:10px 16px;margin:14px 0;background:#fffbeb;border-radius:0 8px 8px 0;font-size:13px;color:#92400e}
+  ul{margin:8px 0 16px 20px}
+  li{margin:3px 0;font-size:14px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}.hero{padding:24px 20px}.hero h1{font-size:20px}.section{padding:20px 16px}table{font-size:12px}th,td{padding:8px 10px}}
+</style>
+</head>
+<body><div class="container">
+
+<div class="hero">
+  <h1>特朗普提及个股 & Q1 2026 持仓全览</h1>
+  <div class="sub">
+    <span class="tag">Truth Social</span>
+    <span class="tag">OGE披露</span>
+    <span class="tag">3711笔交易</span>
+    数据来源：CNBC、OGE披露文件、百家号 | 整理：2026-05-30
+  </div>
+</div>
+
+<div class="section">
+  <h2>📢 特朗普公开喊话/提及的个股</h2>
+  <table>
+    <tr><th style="width:140px">股票</th><th style="width:90px">代码</th><th style="width:100px">提及平台/场合</th><th>提及内容</th><th style="width:70px">信号</th></tr>
+    <tr>
+      <td class="ticker">DJT</td><td>DJT.US</td><td>Truth Social</td>
+      <td>2025.04.09发帖："现在是买入的大好时机！！！DJT。"</td>
+      <td><span class="badge b-post">喊单</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">戴尔</td><td>DELL.US</td><td>佐治亚演讲 + 白宫YouTube</td>
+      <td>"去买台戴尔电脑，它们很棒"；"他们投入了大量资金"<br><span class="fire">2.10买入$1M-5M → 9天后公开喊话</span></td>
+      <td><span class="badge b-sus">先买后吹</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">美光</td><td>MU.US</td><td>福克斯新闻《The Five》</td>
+      <td>"我刚见了美光的负责人，这是最炙手可热的公司之一"；"美光很棒"<br><span class="fire">3.25买入$50K-100K → 次日直播喊话</span></td>
+      <td><span class="badge b-sus">先买后吹</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">Thermo Fisher</td><td>TMO.US</td><td>参观工厂现场</td>
+      <td>"伟大的公司"<br><span class="fire">3.11买入$15K-50K → 同日参观称赞</span></td>
+      <td><span class="badge b-sus">先买后吹</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">苹果</td><td>AAPL.US</td><td>肯塔基演讲</td>
+      <td>夸了苹果CEO蒂姆·库克<br><span class="fire">3.11买入$250K-500K → 同日演讲夸奖</span></td>
+      <td><span class="badge b-sus">先买后吹</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">Palantir</td><td>PLTR.US</td><td>Truth Social</td>
+      <td><span class="fire">买入Palantir数周后，在Truth Social发帖提及</span></td>
+      <td><span class="badge b-sus">先买后吹</span></td>
+    </tr>
+    <tr>
+      <td class="ticker">英特尔</td><td>INTC.US</td><td>政策背书</td>
+      <td>白宫5.18称政府持股（$89亿成本）价值已超$500亿</td>
+      <td><span class="badge b-post">政策扶持</span></td>
+    </tr>
+  </table>
+  <blockquote>模式：先买入 → 几天/几周后在公开场合点赞该公司 → 股价上涨。媒体称之为"白宫股神"。</blockquote>
+</div>
+
+<div class="section">
+  <h2>📈 特朗普 Q1 2026 买入个股</h2>
+  <table>
+    <tr><th>股票</th><th>代码</th><th>行业</th><th>买入规模</th><th>备注</th></tr>
+    <tr><td class="ticker">英伟达</td><td>NVDA.US</td><td>AI芯片</td><td>大额</td><td>AI算力龙头</td></tr>
+    <tr><td class="ticker">苹果</td><td>AAPL.US</td><td>消费电子</td><td>$200万-720万</td><td>3月集中买入</td></tr>
+    <tr><td class="ticker">博通</td><td>AVGO.US</td><td>AI ASIC / 网络</td><td>大额</td><td>Google TPU核心供应商</td></tr>
+    <tr><td class="ticker">新思科技</td><td>SNPS.US</td><td>EDA软件</td><td>大额</td><td>芯片设计工具</td></tr>
+    <tr><td class="ticker">楷登电子</td><td>CDNS.US</td><td>EDA软件</td><td>大额</td><td>芯片设计工具</td></tr>
+    <tr><td class="ticker">德州仪器</td><td>TXN.US</td><td>模拟芯片</td><td>最高$500万</td><td>商务部长公开称赞</td></tr>
+    <tr><td class="ticker">戴尔</td><td>DELL.US</td><td>AI服务器</td><td>$100万-500万</td><td>2.10买入</td></tr>
+    <tr><td class="ticker">美光</td><td>MU.US</td><td>存储芯片</td><td>$5万-10万</td><td>3.25买入</td></tr>
+    <tr><td class="ticker">Thermo Fisher</td><td>TMO.US</td><td>生命科学</td><td>$1.5万-5万</td><td>3.11买入</td></tr>
+    <tr><td class="ticker">Palantir</td><td>PLTR.US</td><td>AI数据分析</td><td>—</td><td>买入后发帖提及</td></tr>
+    <tr><td class="ticker">亚马逊</td><td>AMZN.US</td><td>云计算/电商</td><td>大额</td><td>部分买入</td></tr>
+    <tr><td class="ticker">Meta</td><td>META.US</td><td>社交媒体</td><td>大额</td><td>部分买入</td></tr>
+    <tr><td class="ticker">甲骨文</td><td>ORCL.US</td><td>企业软件/云</td><td>大额</td><td>AI基础设施相关</td></tr>
+    <tr><td class="ticker">摩托罗拉</td><td>MSI.US</td><td>通信设备</td><td>大额</td><td>公共安全通信</td></tr>
+    <tr><td class="ticker">ServiceNow</td><td>NOW.US</td><td>企业SaaS</td><td>持仓中</td><td>市场猜测下一个点名对象</td></tr>
+    <tr><td class="ticker">Adobe</td><td>ADBE.US</td><td>创意软件</td><td>持仓中</td><td>市场猜测下一个点名对象</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>📉 特朗普 Q1 2026 卖出个股</h2>
+  <table>
+    <tr><th>股票</th><th>代码</th><th>卖出规模</th><th>备注</th></tr>
+    <tr><td class="ticker">微软</td><td>MSFT.US</td><td>$500万-2500万</td><td>老牌互联网，单笔大额</td></tr>
+    <tr><td class="ticker">亚马逊</td><td>AMZN.US</td><td>$500万-2500万</td><td>部分卖出</td></tr>
+    <tr><td class="ticker">Meta</td><td>META.US</td><td>$500万-2500万</td><td>部分卖出</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>📊 整体交易概况</h2>
+  <div class="grid2">
+    <div style="background:#fef2f2;border-radius:10px;padding:18px;text-align:center">
+      <div style="font-size:28px;font-weight:700;color:#dc2626">3,711笔</div>
+      <div style="font-size:13px;color:#991b1b;margin-top:4px">Q1 2026 证券交易总数</div>
+    </div>
+    <div style="background:#fef2f2;border-radius:10px;padding:18px;text-align:center">
+      <div style="font-size:28px;font-weight:700;color:#dc2626">$2.2亿-7.5亿</div>
+      <div style="font-size:13px;color:#991b1b;margin-top:4px">Q1 交易规模区间</div>
+    </div>
+  </div>
+  <table>
+    <tr><th>维度</th><th>数据</th></tr>
+    <tr><td>非主动委托交易</td><td><strong>625笔</strong>（几乎全部在3月，绝大多数为买入）</td></tr>
+    <tr><td>交易方向</td><td>卖老牌互联网（微软/亚马逊/Meta），买硬科技（AI芯片/EDA/半导体）</td></tr>
+    <tr><td>核心策略</td><td>重仓AI基础设施 + 国产半导体制造 + 政府合同型企业</td></tr>
+    <tr><td>争议模式</td><td>"先买后吹" — 买入几天到几周后，公开称赞该公司，股价随即上涨</td></tr>
+  </table>
+</div>
+
+<div class="section" style="border-left:4px solid #f59e0b">
+  <h2>⚠️ 说明</h2>
+  <ul>
+    <li>数据来源为OGE（美国政府道德办公室）公开披露文件 + CNBC等主流财经媒体报道</li>
+    <li>交易金额为区间值（OGE披露格式为范围档位，非精确数字）</li>
+    <li>部分股票既有买入也有卖出，"买入"指净增持方向</li>
+    <li>以上信息为公开资料整理，不构成投资建议</li>
+  </ul>
+</div>
+
+</div></body></html>
