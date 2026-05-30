@@ -11,8 +11,8 @@ const ROOT = __dirname;
 
 // 不纳入清单的文件（配置类）
 const SKIP = new Set([
-  'README.md', 'CLOUDFLARE_SETUP.md', 'index.html', '_headers',
-  '.gitignore', 'gen_files.js', 'gen_files.py', 'files.json'
+  'README.md', 'CLOUDFLARE_SETUP.md', 'DEPLOY.md', 'index.html',
+  '_headers', '.gitignore', 'gen_files.js', 'gen_files.py', 'files.json'
 ]);
 
 // 关键词 → 标签映射
