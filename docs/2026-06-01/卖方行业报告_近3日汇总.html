@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卖方行业研报汇总 — 最近3天（5.27-5.29）</title>
+<style>
+  :root{--bg:#f8f9fb;--card:#fff;--text:#1a1a2e;--red:#dc2626;--green:#16a34a;--blue:#2563eb;--border:#e5e7eb;--amber:#d97706}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:20px 16px 60px}
+  .container{max-width:960px;margin:0 auto}
+
+  .hero{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px;box-shadow:0 4px 24px rgba(0,0,0,.15)}
+  .hero h1{font-size:26px;font-weight:700;margin-bottom:8px}
+  .hero .sub{font-size:13px;color:#94a3b8;line-height:1.8}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.12);color:#fbbf24;font-size:11px;padding:2px 10px;border-radius:10px;margin-right:6px;font-weight:600}
+
+  /* Heatmap */
+  .heatmap{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+  .hm-item{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 18px;text-align:center;flex:1;min-width:100px}
+  .hm-item .n{font-size:22px;font-weight:700}
+  .hm-item .l{font-size:12px;color:#6b7280;margin-top:2px}
+  .hm-hot{border-color:#fecaca;background:#fef2f2}
+  .hm-hot .n{color:#dc2626}
+  .hm-warm{border-color:#fde68a;background:#fffbeb}
+  .hm-warm .n{color:#d97706}
+
+  .section{background:var(--card);border-radius:12px;padding:24px 32px;margin-bottom:16px;border:1px solid var(--border);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+  .section h2{font-size:19px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+
+  .day-header{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:10px;padding:14px 20px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+  .day-header .day{font-size:20px;font-weight:700;color:#1e40af}
+  .day-header .desc{font-size:13px;color:#6b7280}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+  th{background:#f1f5f9;font-weight:600;padding:10px 14px;text-align:left;font-size:13px;color:#475569;white-space:nowrap}
+  td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+  tr:hover td{background:#f8fafc}
+
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+  .b-ai{background:#fee2e2;color:#dc2626}
+  .b-cycle{background:#fffbeb;color:#d97706}
+  .b-finance{background:#dbeafe;color:#2563eb}
+  .b-consumer{background:#dcfce7;color:#16a34a}
+  .b-macro{background:#f3e8ff;color:#7c3aed}
+  .b-industry{background:#e0f2fe;color:#0369a1}
+
+  .snippet{font-size:13px;color:#475569;margin:6px 0;padding:8px 12px;background:#f8fafc;border-radius:6px;border-left:3px solid var(--blue)}
+
+  .summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0}
+  .sum-card{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:16px}
+  .sum-card h4{font-size:14px;color:var(--blue);margin-bottom:8px}
+  .sum-card li{font-size:13px;margin:3px 0;list-style:disc inside;color:#475569}
+
+  .note{font-size:13px;color:#6b7280;margin:12px 0;padding:12px 16px;background:#f8fafc;border-radius:8px}
+
+  @media(max-width:640px){.hero{padding:24px 20px}.hero h1{font-size:20px}.section{padding:18px 14px}table{font-size:12px}th,td{padding:8px 10px}}
+</style>
+</head>
+<body><div class="container">
+
+<div class="hero">
+  <h1>卖方行业研报汇总 — 最近3天</h1>
+  <div class="sub">
+    <span class="tag">券商晨会</span>
+    <span class="tag">行业研报</span>
+    <span class="tag">策略报告</span>
+    数据来源：财联社、每经网、东方财富、新浪财经 | 2026-05-27 至 2026-05-29 | 整理时间：2026-06-01
+  </div>
+</div>
+
+<!-- Heatmap -->
+<div class="section">
+  <h2>最近3天（5.27-5.29）行业热度分布</h2>
+  <div class="heatmap">
+    <div class="hm-item hm-hot"><div class="n">AI算力</div><div class="l">最热 ⭐</div></div>
+    <div class="hm-item hm-hot"><div class="n">PCB</div><div class="l">Token工厂</div></div>
+    <div class="hm-item hm-hot"><div class="n">有色金属</div><div class="l">铝/矿端</div></div>
+    <div class="hm-item hm-warm"><div class="n">白电</div><div class="l">三重共振</div></div>
+    <div class="hm-item hm-warm"><div class="n">商业航天</div><div class="l">SpaceX</div></div>
+    <div class="hm-item hm-warm"><div class="n">工程机械</div><div class="l">内外需强</div></div>
+    <div class="hm-item hm-warm"><div class="n">液冷</div><div class="l">数据中心</div></div>
+    <div class="hm-item"><div class="n">消费</div><div class="l">供给出清</div></div>
+    <div class="hm-item"><div class="n">水泥/玻璃</div><div class="l">底部修复</div></div>
+  </div>
+</div>
+
+<!-- May 29 -->
+<div class="section">
+  <div class="day-header"><span class="day">5月29日 周五</span><span class="desc">共12+篇行业/策略研报 | 戴尔AI财报炸裂日</span></div>
+
+  <h3 style="color:#dc2626;font-size:16px;margin-bottom:10px">券商晨会</h3>
+  <table>
+    <tr><th style="width:90px">券商</th><th style="width:100px">方向</th><th>核心观点</th><th style="width:80px">标签</th></tr>
+    <tr><td><strong>招商证券</strong></td><td>策略</td><td>围绕科技主线、出口高景气与产能出清拐点修复领域布局</td><td><span class="badge b-ai">科技主线</span></td></tr>
+    <tr><td><strong>中信证券</strong></td><td>有色金属</td><td>矿端扰动再起，继续推荐铝板块机会</td><td><span class="badge b-cycle">铝</span></td></tr>
+    <tr><td><strong>中信建投</strong></td><td>白电</td><td>白电基本面三重配置逻辑共振，中长期价值显著</td><td><span class="badge b-consumer">白电</span></td></tr>
+  </table>
+
+  <h3 style="color:#2563eb;font-size:16px;margin:16px 0 10px">行业/策略研报</h3>
+  <table>
+    <tr><th style="width:90px">券商</th><th style="width:100px">方向</th><th>核心观点</th><th style="width:80px">标签</th></tr>
+    <tr><td><strong>银河证券</strong></td><td>AI/数据中心</td><td>AI驱动数据中心向Token超级工厂转型，Token是AI算力经济的价值载体。硬件是核心驱动力，利好<strong>PCB、被动元件</strong>全面升级</td><td><span class="badge b-ai">Token工厂</span></td></tr>
+    <tr><td><strong>中信证券</strong></td><td>宏观流动性</td><td>存款增长强于贷款趋势维持，资金有望保持相对宽松，结汇回流+居民存款搬家推升非银存款</td><td><span class="badge b-macro">流动性</span></td></tr>
+    <tr><td><strong>中信证券</strong></td><td>工业企业利润</td><td>4月工企利润和营收增速创新高，PPI超预期修复是核心原因。煤炭、有色、计算机通信、化学原料领涨</td><td><span class="badge b-macro">利润</span></td></tr>
+    <tr><td><strong>中信建投</strong></td><td>保险</td><td>存款搬家+"反内卷"驱动负债端增长；4月以来沪深300涨10.59%提振险企利润。NBV有望保持较快增长</td><td><span class="badge b-finance">保险</span></td></tr>
+    <tr><td><strong>广发证券</strong></td><td>液冷</td><td>液冷行业规模持续扩容，网络传输环节的<strong>液冷交换机、液冷光模块</strong>迎来大量新增需求。关注整线方案商和关键设备供应商</td><td><span class="badge b-ai">液冷</span></td></tr>
+    <tr><td><strong>中泰证券</strong></td><td>建材/玻璃</td><td>浮法玻璃亏损倒逼冷修加速，供给出清趋势明确。光伏玻璃短期深度亏损，下半年有望弱修复</td><td><span class="badge b-industry">建材</span></td></tr>
+    <tr><td><strong>中泰证券</strong></td><td>建材/水泥</td><td>行业盈利已处底部，涨价意愿强烈。海螺水泥市占率从12.79%升至15.65%；华新水泥依托海外业务唯一实现增长</td><td><span class="badge b-industry">水泥</span></td></tr>
+    <tr><td><strong>中信证券</strong></td><td>消费</td><td>2026下半年消费策略：供给侧出清先于需求端复苏，构建"杠铃型组合"（消费+科技再平衡）</td><td><span class="badge b-consumer">消费</span></td></tr>
+    <tr><td><strong>普徕仕</strong></td><td>宏观/海外</td><td>市场低估美联储加息可能性。伊朗冲突推高油价，加息概率35%</td><td><span class="badge b-macro">海外</span></td></tr>
+    <tr><td><strong>城堡证券</strong></td><td>地缘/海外</td><td>对美伊协议乐观，零售/住宅/航空高贝塔替代标的，全球久期资产有反弹空间</td><td><span class="badge b-macro">地缘</span></td></tr>
+  </table>
+</div>
+
+<!-- May 28 -->
+<div class="section">
+  <div class="day-header"><span class="day">5月28日 周四</span><span class="desc">A股科技主线情绪再转一致 | 上中游盈利分化加剧情</span></div>
+
+  <table>
+    <tr><th style="width:90px">券商</th><th style="width:100px">方向</th><th>核心观点</th><th style="width:80px">标签</th></tr>
+    <tr><td><strong>华泰证券</strong></td><td>宏观/策略</td><td>上中游与下游盈利分化加剧。上游利润大幅上行，中游占比进一步提升</td><td><span class="badge b-macro">盈利分化</span></td></tr>
+    <tr><td><strong>国盛证券</strong></td><td>商业航天</td><td>星舰V3首飞验证核心能力，SpaceX上市有望开启<strong>商业航天</strong>新纪元</td><td><span class="badge b-ai">商业航天</span></td></tr>
+    <tr><td><strong>中金公司</strong></td><td>房地产</td><td>北上楼市拐点已进一步得到确认</td><td><span class="badge b-consumer">地产</span></td></tr>
+  </table>
+</div>
+
+<!-- May 27 -->
+<div class="section">
+  <div class="day-header"><span class="day">5月27日 周三</span><span class="desc">工程机械内外需强劲 | AI+能化杠铃结构受关注</span></div>
+
+  <table>
+    <tr><th style="width:90px">券商</th><th style="width:100px">方向</th><th>核心观点</th><th style="width:80px">标签</th></tr>
+    <tr><td><strong>华泰证券</strong></td><td>策略</td><td>配置型资金出现一定回补迹象</td><td><span class="badge b-macro">资金流向</span></td></tr>
+    <tr><td><strong>中信建投</strong></td><td>工程机械</td><td><strong>工程机械</strong>内外需表现强劲，此时为较好布局时点</td><td><span class="badge b-cycle">工程机械</span></td></tr>
+    <tr><td><strong>中信证券</strong></td><td>策略</td><td>建议配置<strong>AI+能化</strong>的新杠铃结构</td><td><span class="badge b-ai">AI+能化</span></td></tr>
+  </table>
+</div>
+
+<!-- Summary -->
+<div class="section">
+  <h2>最近3天行业研报全景总结</h2>
+  <div class="summary-grid">
+    <div class="sum-card">
+      <h4>AI/科技（最热 ⭐⭐⭐⭐⭐）</h4>
+      <ul>
+        <li>银河：Token超级工厂，利好PCB/被动元件</li>
+        <li>广发：液冷交换机/光模块新增需求</li>
+        <li>中信：AI+能化杠铃结构</li>
+        <li>招商：科技主线为核心布局方向</li>
+      </ul>
+    </div>
+    <div class="sum-card">
+      <h4>周期/资源品 ⭐⭐⭐</h4>
+      <ul>
+        <li>中信：铝板块机会（矿端扰动）</li>
+        <li>中泰：水泥底部修复，海螺/华新</li>
+        <li>中泰：浮法玻璃供给出清</li>
+        <li>中信：煤炭行业利润修复显著</li>
+      </ul>
+    </div>
+    <div class="sum-card">
+      <h4>消费/地产 ⭐⭐</h4>
+      <ul>
+        <li>中信建投：白电三重配置逻辑</li>
+        <li>中信：消费杠铃型组合策略</li>
+        <li>中信建投：保险NBV增长可期</li>
+        <li>中金：北上楼市拐点确认</li>
+      </ul>
+    </div>
+    <div class="sum-card">
+      <h4>新兴产业/其他 ⭐⭐</h4>
+      <ul>
+        <li>国盛：商业航天新纪元</li>
+        <li>中信建投：工程机械布局时点</li>
+        <li>华泰：上中游盈利分化</li>
+        <li>普徕仕：美联储加息概率</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Coverage stats -->
+<div class="section">
+  <h2>活跃券商统计（5.27-5.29）</h2>
+  <table>
+    <tr><th>券商</th><th>发文数</th><th>覆盖方向</th></tr>
+    <tr><td><strong>中信证券</strong></td><td>5篇</td><td>铝板块、流动性、工企利润、消费策略、AI+能化</td></tr>
+    <tr><td><strong>中信建投</strong></td><td>3篇</td><td>白电、保险、工程机械</td></tr>
+    <tr><td><strong>中泰证券</strong></td><td>2篇</td><td>浮法/光伏玻璃、水泥</td></tr>
+    <tr><td>华泰证券</td><td>1篇</td><td>上中游盈利分化</td></tr>
+    <tr><td>招商证券</td><td>1篇</td><td>科技主线/出口/产能出清</td></tr>
+    <tr><td>银河证券</td><td>1篇</td><td>AI数据中心/Token工厂</td></tr>
+    <tr><td>广发证券</td><td>1篇</td><td>液冷/数据中心</td></tr>
+    <tr><td>国盛证券</td><td>1篇</td><td>商业航天</td></tr>
+    <tr><td>中金公司</td><td>1篇</td><td>北上楼市拐点</td></tr>
+  </table>
+</div>
+
+<div class="note">
+  <strong>说明：</strong><br>
+  1. 5月30日（周六）、5月31日（周日）为非交易日，无券商晨会/研报发布，故"最近3天"覆盖5月27-29日（周三至周五）<br>
+  2. 数据来源：财联社"券商晨会精华"、每经网、东方财富研报中心、新浪财经、慧博资讯等<br>
+  3. 部分研报未在晨会中体现，通过机构观点汇总补充<br>
+  4. 本报告仅供研究参考，不构成投资建议<br>
+  5. 整理时间：2026年6月1日凌晨 | 自动更新于A股研报共享站点
+</div>
+
+</div></body></html>
