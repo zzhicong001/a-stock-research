@@ -112,7 +112,7 @@ function walkDir(dir, relativePrefix) {
       const name = entry.name;
       if (SKIP.has(name)) continue;
       const ext = path.extname(name).toLowerCase();
-      if (ext !== '.md' && ext !== '.html') continue;
+      if (ext !== '.md' && ext !== '.html' && ext !== '.docx') continue;
       const fullPath = path.join(dir, name);
       const relPath = relativePrefix + name;
       results.push({ fullPath, relPath, name, ext: ext.slice(1) });
@@ -126,11 +126,18 @@ function scan() {
   const found = walkDir(DOCS_DIR, 'docs/');
 
   for (const { fullPath, relPath, name, ext: ftype } of found) {
-    const content = fs.readFileSync(fullPath, 'utf-8');
-    const title = extractTitle(fullPath, content);
     const date = extractDate(fullPath);
-    const desc = extractDesc(fullPath, content);
-    const tags = autoTags(title, desc, name);
+    let title, desc, tags;
+    if (ftype === 'docx') {
+      title = extractTitle(fullPath, '');
+      desc = '';
+      tags = autoTags(title, '', name);
+    } else {
+      const content = fs.readFileSync(fullPath, 'utf-8');
+      title = extractTitle(fullPath, content);
+      desc = extractDesc(fullPath, content);
+      tags = autoTags(title, desc, name);
+    }
 
     items.push({
       filename: name,

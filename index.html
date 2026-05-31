@@ -6,16 +6,9 @@
 <title>A股研报 & 投资分析</title>
 <style>
   :root {
-    --bg: #0f1117;
-    --sidebar-bg: #131620;
-    --card-bg: #1a1d28;
-    --text: #e4e6eb;
-    --text-secondary: #9ca3af;
-    --accent: #f59e0b;
-    --accent-dim: #d97706;
-    --border: #2d3148;
-    --tag-bg: #1e293b;
-    --sidebar-width: 300px;
+    --bg: #0f1117; --sidebar-bg: #131620; --card-bg: #1a1d28; --text: #e4e6eb;
+    --text-secondary: #9ca3af; --accent: #f59e0b; --accent-dim: #d97706;
+    --border: #2d3148; --tag-bg: #1e293b; --sidebar-width: 300px;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
@@ -23,161 +16,80 @@
     background: var(--bg); color: var(--text); line-height: 1.6;
     height: 100vh; overflow: hidden; display: flex;
   }
-
-  /* ---- Sidebar ---- */
   .sidebar {
     width: var(--sidebar-width); min-width: var(--sidebar-width);
     background: var(--sidebar-bg); border-right: 1px solid var(--border);
-    display: flex; flex-direction: column; height: 100vh; overflow: hidden;
-    z-index: 10;
+    display: flex; flex-direction: column; height: 100vh; overflow: hidden; z-index: 10;
   }
-  .sidebar-header {
-    padding: 20px 18px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0;
-  }
-  .sidebar-header h2 {
-    font-size: 1.1em; font-weight: 700; margin-bottom: 4px;
-    background: linear-gradient(135deg, #f59e0b, #fbbf24);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  }
+  .sidebar-header { padding: 20px 18px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  .sidebar-header h2 { font-size: 1.1em; font-weight: 700; margin-bottom: 4px; background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .sidebar-header .sub { font-size: 0.78em; color: var(--text-secondary); }
-  .sidebar-header .disclaimer {
-    display: inline-block; margin-top: 8px; padding: 3px 10px;
-    background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);
-    border-radius: 12px; font-size: 0.7em; color: #ef4444;
-  }
-
-  .sidebar-search {
-    padding: 12px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0; position: relative;
-  }
-  .sidebar-search input {
-    width: 100%; padding: 8px 14px 8px 34px;
-    background: var(--card-bg); border: 1px solid var(--border); border-radius: 18px;
-    color: var(--text); font-size: 0.85em; outline: none; transition: border-color 0.2s;
-  }
+  .sidebar-header .disclaimer { display: inline-block; margin-top: 8px; padding: 3px 10px; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); border-radius: 12px; font-size: 0.7em; color: #ef4444; }
+  .sidebar-search { padding: 12px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0; position: relative; }
+  .sidebar-search input { width: 100%; padding: 8px 14px 8px 34px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 18px; color: var(--text); font-size: 0.85em; outline: none; }
   .sidebar-search input:focus { border-color: var(--accent); }
-  .sidebar-search input::placeholder { color: var(--text-secondary); }
-  .sidebar-search svg {
-    position: absolute; left: 25px; top: 50%; transform: translateY(-50%);
-    width: 16px; height: 16px; opacity: 0.4; pointer-events: none;
-  }
-  .search-result-count {
-    text-align: center; font-size: 0.75em; color: var(--text-secondary);
-    padding: 4px 0; border-bottom: 1px solid var(--border); flex-shrink: 0; display: none;
-  }
+  .sidebar-search svg { position: absolute; left: 25px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; opacity: 0.4; pointer-events: none; }
+  .search-result-count { text-align: center; font-size: 0.75em; color: var(--text-secondary); padding: 4px 0; border-bottom: 1px solid var(--border); flex-shrink: 0; display: none; }
   .search-result-count.visible { display: block; }
-
-  .sidebar-tree {
-    flex: 1; overflow-y: auto; padding: 8px 0;
-    scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-  }
+  .sidebar-tree { flex: 1; overflow-y: auto; padding: 8px 0; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
   .sidebar-tree::-webkit-scrollbar { width: 5px; }
   .sidebar-tree::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-  .sidebar-footer {
-    padding: 10px 14px; border-top: 1px solid var(--border); flex-shrink: 0;
-    font-size: 0.72em; color: var(--text-secondary); text-align: center;
-  }
+  .sidebar-footer { padding: 10px 14px; border-top: 1px solid var(--border); flex-shrink: 0; font-size: 0.72em; color: var(--text-secondary); text-align: center; }
   .sidebar-footer a { color: var(--accent); text-decoration: none; }
 
-  /* ---- Tree Nodes ---- */
   .tree-node { user-select: none; }
-  .tree-row {
-    display: flex; align-items: center; gap: 4px; padding: 4px 12px;
-    cursor: pointer; transition: background 0.12s; min-height: 32px;
-    text-decoration: none; color: var(--text); font-size: 0.85em;
-  }
+  .tree-row { display: flex; align-items: center; gap: 4px; padding: 4px 12px; cursor: pointer; transition: background 0.12s; min-height: 32px; text-decoration: none; color: var(--text); font-size: 0.85em; }
   .tree-row:hover { background: var(--tag-bg); }
-  .tree-row:active { background: rgba(245,158,11,0.1); }
-
-  .tree-arrow {
-    width: 18px; height: 18px; display: flex; align-items: center; justify-content: center;
-    font-size: 0.65em; color: var(--text-secondary); flex-shrink: 0;
-    transition: transform 0.15s;
-  }
+  .tree-arrow { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 0.65em; color: var(--text-secondary); flex-shrink: 0; transition: transform 0.15s; }
   .tree-folder.open > .tree-row .tree-arrow { transform: rotate(90deg); }
   .tree-arrow.empty { visibility: hidden; }
-
   .tree-icon { flex-shrink: 0; font-size: 1em; width: 20px; text-align: center; }
   .tree-label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .tree-badge {
-    font-size: 0.8em; color: var(--text-secondary); flex-shrink: 0; margin-left: 4px;
-  }
-  .tree-file-tags {
-    display: flex; gap: 3px; flex-shrink: 0; margin-left: 4px;
-  }
-  .tree-file-tags .mini-tag {
-    padding: 1px 6px; background: var(--tag-bg); border-radius: 6px;
-    font-size: 0.7em; color: var(--text-secondary);
-  }
-  .mini-tag.html { color: #60a5fa; }
+  .tree-badge { font-size: 0.8em; color: var(--text-secondary); flex-shrink: 0; margin-left: 4px; }
+  .tree-file-tags { display: flex; gap: 3px; flex-shrink: 0; margin-left: 4px; }
+  .tree-file-tags .mini-tag { padding: 1px 6px; background: var(--tag-bg); border-radius: 6px; font-size: 0.7em; color: var(--text-secondary); }
   .mini-tag.md { color: #10b981; }
-
+  .mini-tag.docx { color: #60a5fa; }
   .tree-children { display: none; }
   .tree-folder.open > .tree-children { display: block; }
-
   .tree-row.active { background: rgba(245,158,11,0.12); border-left: 2px solid var(--accent); padding-left: 10px; }
   .tree-row.hidden { display: none; }
-
   .highlight { background: rgba(245,158,11,0.3); border-radius: 2px; padding: 0 2px; }
 
-  /* ---- Main Content ---- */
-  .main {
-    flex: 1; display: flex; flex-direction: column; height: 100vh; overflow: hidden;
-  }
-  .main-header {
-    padding: 14px 24px; border-bottom: 1px solid var(--border); flex-shrink: 0;
-    display: flex; align-items: center; gap: 12px;
-  }
+  .main { flex: 1; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+  .main-header { padding: 14px 24px; border-bottom: 1px solid var(--border); flex-shrink: 0; display: flex; align-items: center; gap: 12px; }
   .main-header .doc-title { font-size: 1.1em; font-weight: 700; flex: 1; }
   .main-header .doc-meta { font-size: 0.82em; color: var(--text-secondary); }
   .main-header .doc-actions { display: flex; gap: 8px; }
-  .main-header .doc-actions a {
+  .main-header .doc-actions a, .main-header .doc-actions button {
     padding: 4px 12px; border: 1px solid var(--border); border-radius: 14px;
-    font-size: 0.78em; color: var(--text-secondary); text-decoration: none;
-    transition: all 0.2s;
+    font-size: 0.78em; color: var(--text-secondary); cursor: pointer; background: transparent; transition: all 0.2s;
   }
-  .main-header .doc-actions a:hover { border-color: var(--accent); color: var(--accent); }
+  .main-header .doc-actions a:hover, .main-header .doc-actions button:hover { border-color: var(--accent); color: var(--accent); }
+  .copy-notice { position: fixed; top: 16px; right: 16px; background: var(--accent); color: #000; padding: 8px 18px; border-radius: 8px; font-size: 0.85em; font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 100; }
+  .copy-notice.show { opacity: 1; }
 
-  .main-body {
-    flex: 1; overflow-y: auto; padding: 0 24px 40px;
-    scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-  }
+  .main-body { flex: 1; overflow-y: auto; padding: 0 24px 40px; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
   .main-body::-webkit-scrollbar { width: 5px; }
   .main-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .main-body.html-full { padding: 0; }
 
-  .welcome {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    height: 100%; text-align: center; color: var(--text-secondary);
-  }
+  .welcome { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; color: var(--text-secondary); }
   .welcome h2 { font-size: 1.4em; margin-bottom: 8px; color: var(--text); }
-  .welcome p { font-size: 0.9em; max-width: 400px; }
   .welcome .stats { margin-top: 20px; font-size: 0.85em; display: flex; gap: 24px; }
   .welcome .stats strong { color: var(--accent); }
 
-  /* ---- MD Content ---- */
   .md-content { line-height: 1.85; max-width: 820px; margin: 0 auto; padding-top: 20px; }
   .md-content.html-view { max-width: none; margin: 0; padding: 0; }
-  .html-frame {
-    width: 100%; height: calc(100vh - 80px); border: none; display: block;
-  }
+  .html-frame { width: 100%; height: calc(100vh - 80px); border: none; display: block; }
   .md-content h1 { font-size: 1.8em; font-weight: 700; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
   .md-content h2 { font-size: 1.4em; font-weight: 700; margin: 28px 0 12px; }
   .md-content h3 { font-size: 1.15em; font-weight: 600; margin: 24px 0 10px; color: var(--accent); }
-  .md-content h4 { font-size: 1em; font-weight: 600; margin: 20px 0 8px; }
   .md-content p { margin: 10px 0; }
   .md-content a { color: var(--accent); }
-  .md-content blockquote {
-    border-left: 3px solid var(--accent); padding: 10px 18px; margin: 16px 0;
-    background: rgba(245,158,11,0.05); border-radius: 0 8px 8px 0; color: var(--text-secondary);
-  }
-  .md-content code {
-    background: var(--tag-bg); padding: 2px 6px; border-radius: 4px;
-    font-family: "SF Mono","Fira Code","Consolas",monospace; font-size: 0.9em;
-  }
-  .md-content pre {
-    background: var(--tag-bg); padding: 16px 20px; border-radius: 8px; overflow-x: auto;
-    margin: 16px 0; border: 1px solid var(--border);
-  }
+  .md-content blockquote { border-left: 3px solid var(--accent); padding: 10px 18px; margin: 16px 0; background: rgba(245,158,11,0.05); border-radius: 0 8px 8px 0; color: var(--text-secondary); }
+  .md-content code { background: var(--tag-bg); padding: 2px 6px; border-radius: 4px; font-family: "SF Mono","Fira Code","Consolas",monospace; font-size: 0.9em; }
+  .md-content pre { background: var(--tag-bg); padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin: 16px 0; border: 1px solid var(--border); }
   .md-content pre code { background: none; padding: 0; font-size: 0.85em; }
   .md-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9em; }
   .md-content th, .md-content td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
@@ -191,15 +103,16 @@
   .md-content em { color: var(--text-secondary); }
 
   .main-body .loading { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
-  .main-body.html-full { padding: 0; }
+  .main-body .error { text-align: center; padding: 60px 20px; color: #ef4444; }
 
-  /* ---- Mobile ---- */
-  .menu-btn {
-    display: none; position: fixed; top: 12px; left: 12px; z-index: 20;
-    width: 36px; height: 36px; align-items: center; justify-content: center;
-    background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
-    color: var(--text); cursor: pointer; font-size: 1.2em;
+  .bookmark-indicator {
+    position: fixed; right: 20px; bottom: 30px; width: 36px; height: 36px;
+    background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1em; cursor: pointer; opacity: 0; transition: opacity 0.3s; z-index: 50; box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   }
+  .bookmark-indicator.show { opacity: 0.85; }
+
+  .menu-btn { display: none; position: fixed; top: 12px; left: 12px; z-index: 20; width: 36px; height: 36px; align-items: center; justify-content: center; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); cursor: pointer; font-size: 1.2em; }
   .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9; }
   @media (max-width: 768px) {
     .menu-btn { display: flex; }
@@ -208,7 +121,6 @@
     .overlay.open { display: block; }
     .main-header { padding: 14px 16px 14px 52px; }
     .main-body { padding: 0 12px 30px; }
-    .main-body .md-content { padding-top: 10px; }
     .md-content table { display: block; overflow-x: auto; }
   }
 </style>
@@ -217,8 +129,9 @@
 
 <button class="menu-btn" id="menu-btn" onclick="toggleSidebar()" title="目录">☰</button>
 <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+<div class="copy-notice" id="copy-notice">链接已复制</div>
+<div class="bookmark-indicator" id="bookmark-ind" title="已保存阅读位置">🔖</div>
 
-<!-- Sidebar -->
 <aside class="sidebar open" id="sidebar">
   <div class="sidebar-header">
     <h2>A股研报</h2>
@@ -238,7 +151,6 @@
   </div>
 </aside>
 
-<!-- Main -->
 <main class="main">
   <div class="main-header" id="main-header">
     <span class="doc-title" id="main-title">欢迎</span>
@@ -248,7 +160,7 @@
   <div class="main-body" id="main-body">
     <div class="welcome" id="welcome">
       <h2>A股研报 & 投资分析</h2>
-      <p>左侧目录树选择文档进行阅读。<br>支持 MD 渲染与 HTML 直接浏览。</p>
+      <p>左侧目录树选择文档进行阅读。</p>
       <div class="stats" id="stats"></div>
     </div>
     <div class="md-content" id="md-content" style="display:none"></div>
@@ -258,6 +170,7 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1/mammoth.browser.min.js"></script>
 <script>
 (function() {
   const tree = document.getElementById('sidebar-tree');
@@ -272,157 +185,130 @@
   const mainLoading = document.getElementById('main-loading');
   const mainError = document.getElementById('main-error');
   const statsEl = document.getElementById('stats');
+  const copyNotice = document.getElementById('copy-notice');
+  const bookmarkInd = document.getElementById('bookmark-ind');
 
   let allDocs = [];
   let activeHref = null;
   let searchQuery = '';
+  let saveTimer = null;
 
-  // 模糊匹配
+  // ====== 书签 ======
+  function saveBookmark(href) {
+    if (!href) return;
+    const pos = mainBody.scrollTop;
+    if (pos > 100) {
+      localStorage.setItem('pos_' + href, pos);
+      bookmarkInd.classList.add('show');
+      setTimeout(() => bookmarkInd.classList.remove('show'), 2000);
+    }
+  }
+  function restoreBookmark(href) {
+    const saved = localStorage.getItem('pos_' + href);
+    if (saved) {
+      const pos = parseInt(saved);
+      setTimeout(() => { mainBody.scrollTop = pos; }, 300);
+    }
+  }
+  mainBody.addEventListener('scroll', function() {
+    if (!activeHref) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => saveBookmark(activeHref), 1000);
+  });
+
+  // ====== URL Hash ======
+  function updateHash(href) {
+    if (href) {
+      history.replaceState(null, '', '#' + href);
+    }
+  }
+  function parseHash() {
+    const h = window.location.hash.slice(1);
+    if (!h) return null;
+    if (h.startsWith('docs/')) return h;
+    return null;
+  }
+  window.addEventListener('hashchange', function() {
+    const href = parseHash();
+    if (href && href !== activeHref) loadByHref(href);
+  });
+
+  // ====== 搜索 ======
   function fuzzyMatch(text, query) {
     if (!query) return true;
     const t = text.toLowerCase(), q = query.toLowerCase();
     let qi = 0;
-    for (let i = 0; i < t.length && qi < q.length; i++) {
-      if (t[i] === q[qi]) qi++;
-    }
+    for (let i = 0; i < t.length && qi < q.length; i++) if (t[i] === q[qi]) qi++;
     return qi === q.length;
   }
-
   function docMatchText(doc) {
-    return doc.title + ' ' + doc.desc + ' ' + doc.tags.join(' ') + ' ' +
-      doc.files.map(f => f.href).join(' ');
+    return doc.title + ' ' + doc.desc + ' ' + doc.tags.join(' ') + ' ' + doc.files.map(f => f.href).join(' ');
   }
-
   function esc(s) { return s.replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
   function hl(text) {
     if (!searchQuery || !text) return esc(text);
     const q = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return esc(text).replace(new RegExp(`(${q})`, 'gi'), '<span class="highlight">$1</span>');
+    return esc(text).replace(new RegExp(`(${q})`,'gi'), '<span class="highlight">$1</span>');
   }
 
-  // 年月日
   const MONTHS = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-
   function parseDateFolder(href) {
     const m = href.match(/docs\/(\d{4})-(\d{2})-(\d{2})\//);
-    if (m) return { year: m[1], month: m[2], day: m[3] };
-    return { year: '其他', month: '', day: '' };
+    return m ? { year: m[1], month: m[2], day: m[3] } : { year: '其他', month: '', day: '' };
   }
-
-  // 构建树数据
   function buildTreeData(docs) {
-    const tree = {};
+    const t = {};
     docs.forEach(doc => {
-      const f = doc.files[0];
-      const date = parseDateFolder(f.href);
-      if (!tree[date.year]) tree[date.year] = {};
-      if (!tree[date.year][date.month]) tree[date.year][date.month] = {};
-      if (!tree[date.year][date.month][date.day]) tree[date.year][date.month][date.day] = [];
-      tree[date.year][date.month][date.day].push(doc);
+      const f = doc.files[0], date = parseDateFolder(f.href);
+      if (!t[date.year]) t[date.year] = {};
+      if (!t[date.year][date.month]) t[date.year][date.month] = {};
+      if (!t[date.year][date.month][date.day]) t[date.year][date.month][date.day] = [];
+      t[date.year][date.month][date.day].push(doc);
     });
-    return tree;
+    return t;
   }
-
   function countDocs(node) {
-    let count = 0;
     if (Array.isArray(node)) return node.length;
-    for (const key in node) count += countDocs(node[key]);
-    return count;
+    let c = 0; for (const k in node) c += countDocs(node[k]); return c;
   }
-
-  // 判断节点是否匹配搜索
   function nodeMatchesSearch(node) {
-    if (Array.isArray(node)) {
-      return node.some(d => fuzzyMatch(docMatchText(d), searchQuery));
-    }
-    for (const key in node) {
-      if (nodeMatchesSearch(node[key])) return true;
-    }
+    if (Array.isArray(node)) return node.some(d => fuzzyMatch(docMatchText(d), searchQuery));
+    for (const k in node) if (nodeMatchesSearch(node[k])) return true;
     return false;
   }
 
   function renderTree(data) {
-    if (!allDocs.length) {
-      tree.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-secondary);">📭 暂无文档</div>';
-      return;
-    }
-
-    const sortedYears = Object.keys(data).sort().reverse();
+    if (!allDocs.length) { tree.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-secondary);">📭 暂无文档</div>'; return; }
+    const years = Object.keys(data).sort().reverse();
     let html = '';
-
-    sortedYears.forEach(year => {
-      const yearData = data[year];
-      if (searchQuery && !nodeMatchesSearch(yearData)) return;
-
-      const yearCount = countDocs(yearData);
-      const yearId = 'y' + year;
-      const hasMonths = Object.keys(yearData).length > 0;
-
+    years.forEach(year => {
+      const yd = data[year];
+      if (searchQuery && !nodeMatchesSearch(yd)) return;
       html += `<div class="tree-node tree-folder open" data-year="${year}">`;
-      html += `<div class="tree-row" onclick="toggleFolder(this.parentElement, event)" data-id="${yearId}">`;
-      html += `<span class="tree-arrow">▶</span>`;
-      html += `<span class="tree-icon">📁</span>`;
-      html += `<span class="tree-label">${year}年</span>`;
-      html += `<span class="tree-badge">${yearCount}篇</span>`;
-      html += `</div>`;
+      html += `<div class="tree-row" onclick="toggleFolder(this.parentElement,event)"><span class="tree-arrow">▶</span><span class="tree-icon">📁</span><span class="tree-label">${year}年</span><span class="tree-badge">${countDocs(yd)}篇</span></div>`;
       html += `<div class="tree-children">`;
-
-      const sortedMonths = Object.keys(yearData).sort((a,b) => parseInt(b)-parseInt(a));
-      sortedMonths.forEach(month => {
-        const monthData = yearData[month];
-        if (searchQuery && !nodeMatchesSearch(monthData)) return;
-
-        const monthCount = countDocs(monthData);
-        const monthId = `m${year}${month}`;
-        const monthLabel = MONTHS[parseInt(month)] || month;
-
+      Object.keys(yd).sort((a,b)=>parseInt(b)-parseInt(a)).forEach(month => {
+        const md = yd[month];
+        if (searchQuery && !nodeMatchesSearch(md)) return;
         html += `<div class="tree-node tree-folder open" data-month="${month}">`;
-        html += `<div class="tree-row" onclick="toggleFolder(this.parentElement, event)" data-id="${monthId}">`;
-        html += `<span class="tree-arrow">▶</span>`;
-        html += `<span class="tree-icon">📂</span>`;
-        html += `<span class="tree-label">${monthLabel}</span>`;
-        html += `<span class="tree-badge">${monthCount}篇</span>`;
-        html += `</div>`;
+        html += `<div class="tree-row" onclick="toggleFolder(this.parentElement,event)"><span class="tree-arrow">▶</span><span class="tree-icon">📂</span><span class="tree-label">${MONTHS[parseInt(month)]||month}</span><span class="tree-badge">${countDocs(md)}篇</span></div>`;
         html += `<div class="tree-children">`;
-
-        const sortedDays = Object.keys(monthData).sort((a,b) => parseInt(b)-parseInt(a));
-        sortedDays.forEach(day => {
-          const dayDocs = monthData[day];
-          if (searchQuery) {
-            const matching = dayDocs.filter(d => fuzzyMatch(docMatchText(d), searchQuery));
-            if (!matching.length) return;
-          }
-
-          const dayId = `d${year}${month}${day}`;
+        Object.keys(md).sort((a,b)=>parseInt(b)-parseInt(a)).forEach(day => {
+          let dd = md[day];
+          if (searchQuery) dd = dd.filter(d => fuzzyMatch(docMatchText(d), searchQuery));
+          if (!dd.length) return;
           html += `<div class="tree-node tree-folder open" data-day="${day}">`;
-          html += `<div class="tree-row" onclick="toggleFolder(this.parentElement, event)" data-id="${dayId}">`;
-          html += `<span class="tree-arrow">▶</span>`;
-          html += `<span class="tree-icon">📅</span>`;
-          html += `<span class="tree-label">${parseInt(day)}日</span>`;
-          html += `<span class="tree-badge">${dayDocs.length}篇</span>`;
-          html += `</div>`;
+          html += `<div class="tree-row" onclick="toggleFolder(this.parentElement,event)"><span class="tree-arrow">▶</span><span class="tree-icon">📅</span><span class="tree-label">${parseInt(day)}日</span><span class="tree-badge">${dd.length}篇</span></div>`;
           html += `<div class="tree-children">`;
-
-          const shownDocs = searchQuery
-            ? dayDocs.filter(d => fuzzyMatch(docMatchText(d), searchQuery))
-            : dayDocs;
-          shownDocs.forEach(doc => {
+          dd.forEach(doc => {
             const primary = doc.files[0];
-            const fTags = doc.files.filter(f => f.type === 'md').map(f =>
-              `<span class="mini-tag md">${f.name}</span>`
+            const fTags = doc.files.filter(f => f.type === 'md' || f.type === 'docx').map(f =>
+              `<span class="mini-tag ${f.type}">${f.name}</span>`
             ).join('');
             const href = primary.href;
-            const isMd = primary.type === 'md';
-            const fileId = 'f' + href;
+            const isMd = primary.type === 'md' || primary.type === 'docx';
             html += `<div class="tree-node tree-file" data-href="${href}">`;
-            html += `<a href="${href}" class="tree-row" data-id="${fileId}"
-              onclick="selectFile(event, '${esc(href)}', '${esc(doc.title)}', '${doc.date}', ${isMd})">`;
-            html += `<span class="tree-arrow empty">▶</span>`;
-            html += `<span class="tree-icon">📄</span>`;
-            html += `<span class="tree-label">${hl(doc.title)}</span>`;
-            html += `<span class="tree-file-tags">${fTags}</span>`;
-            html += `</a></div>`;
+            html += `<a href="#${href}" class="tree-row" onclick="selectFile(event,'${esc(href)}','${esc(doc.title)}','${doc.date}','${primary.type}')"><span class="tree-arrow empty">▶</span><span class="tree-icon">📄</span><span class="tree-label">${hl(doc.title)}</span><span class="tree-file-tags">${fTags}</span></a></div>`;
           });
           html += `</div></div>`;
         });
@@ -430,37 +316,31 @@
       });
       html += `</div></div>`;
     });
-
     tree.innerHTML = html;
-
-    // 更新选中状态
     if (activeHref) {
-      const activeEl = tree.querySelector(`[data-href="${activeHref}"]`);
-      if (activeEl) {
-        const row = activeEl.querySelector('.tree-row');
-        if (row) row.classList.add('active');
-      }
+      const ae = tree.querySelector(`[data-href="${activeHref}"]`);
+      if (ae) { const r = ae.querySelector('.tree-row'); if (r) r.classList.add('active'); }
     }
   }
 
-  window.toggleFolder = function(el, event) {
-    event.stopPropagation();
-    el.classList.toggle('open');
-  };
+  window.toggleFolder = function(el, ev) { ev.stopPropagation(); el.classList.toggle('open'); };
 
-  window.selectFile = function(event, href, title, date, isMd) {
+  // ====== 文件选择 ======
+  window.selectFile = function(event, href, title, date, type) {
     event.preventDefault();
+    if (activeHref && activeHref !== href) saveBookmark(activeHref);
     activeHref = href;
+    updateHash(href);
     mainTitle.textContent = title;
     mainMeta.textContent = '📅 ' + date;
-
-    // 高亮当前选中
     tree.querySelectorAll('.tree-row.active').forEach(r => r.classList.remove('active'));
     const row = event.target.closest('.tree-row');
     if (row) row.classList.add('active');
 
-    if (isMd) {
-      loadMd(href, title, date);
+    if (type === 'md') {
+      loadMd(href);
+    } else if (type === 'docx') {
+      loadDocx(href);
     } else {
       welcome.style.display = 'none';
       mainBody.classList.add('html-full');
@@ -468,20 +348,14 @@
       mdContent.classList.add('html-view');
       mainLoading.style.display = 'none';
       mainError.style.display = 'none';
-      mdContent.innerHTML = `<iframe src="${href}" class="html-frame"
-        sandbox="allow-scripts allow-same-origin"></iframe>`;
+      mdContent.innerHTML = `<iframe src="${href}" class="html-frame" sandbox="allow-scripts allow-same-origin"></iframe>`;
     }
-
-    mainActions.innerHTML = `<a href="${href}" target="_blank">打开原始文件</a>`;
-
-    // 移动端关闭侧边栏
+    mainActions.innerHTML = `<a href="${href}" target="_blank">打开原始文件</a><button onclick="copyLink()" title="复制分享链接">🔗 复制链接</button>`;
     if (window.innerWidth <= 768) closeSidebar();
-
-    // 滚动到顶部
-    mainBody.scrollTop = 0;
+    restoreBookmark(href);
   };
 
-  function loadMd(href, title, date) {
+  function loadMd(href) {
     welcome.style.display = 'none';
     mainBody.classList.remove('html-full');
     mdContent.style.display = 'block';
@@ -490,59 +364,90 @@
     mainError.style.display = 'none';
     mdContent.innerHTML = '';
     mainBody.scrollTop = 0;
-
-    fetch(href)
-      .then(r => { if (!r.ok) throw new Error('404'); return r.text(); })
-      .then(md => {
-        mainLoading.style.display = 'none';
-        mdContent.innerHTML = marked.parse(md);
-      })
-      .catch(err => {
-        mainLoading.style.display = 'none';
-        mainError.style.display = 'block';
-        mainError.innerHTML = `⚠ 加载失败: <a href="${href}" target="_blank" style="color:var(--accent);">直接打开</a>`;
-      });
+    fetch(href).then(r => { if (!r.ok) throw new Error(); return r.text(); })
+      .then(md => { mainLoading.style.display = 'none'; mdContent.innerHTML = marked.parse(md); restoreBookmark(href); })
+      .catch(() => { mainLoading.style.display = 'none'; mainError.style.display = 'block'; mainError.innerHTML = `⚠ 加载失败 <a href="${href}" target="_blank" style="color:var(--accent);">直接打开</a>`; });
   }
 
-  // 搜索
-  let searchTimer;
+  function loadDocx(href) {
+    welcome.style.display = 'none';
+    mainBody.classList.remove('html-full');
+    mdContent.style.display = 'block';
+    mdContent.classList.remove('html-view');
+    mainLoading.style.display = 'block';
+    mainError.style.display = 'none';
+    mdContent.innerHTML = '';
+    mainBody.scrollTop = 0;
+    fetch(href).then(r => { if (!r.ok) throw new Error(); return r.arrayBuffer(); })
+      .then(buf => mammoth.convertToHtml({ arrayBuffer: buf }))
+      .then(result => { mainLoading.style.display = 'none'; mdContent.innerHTML = result.value; restoreBookmark(href); })
+      .catch(() => { mainLoading.style.display = 'none'; mainError.style.display = 'block'; mainError.innerHTML = `⚠ 加载失败 <a href="${href}" target="_blank" style="color:var(--accent);">直接下载</a>`; });
+  }
+
+  // ====== 复制链接 ======
+  window.copyLink = function() {
+    const url = window.location.origin + window.location.pathname + '#' + activeHref;
+    navigator.clipboard.writeText(url).then(() => {
+      copyNotice.classList.add('show');
+      setTimeout(() => copyNotice.classList.remove('show'), 2000);
+    });
+  };
+
+  // ====== 按 href 加载 ======
+  function loadByHref(href) {
+    for (const doc of allDocs) {
+      const f = doc.files[0];
+      if (f.href === href) {
+        if (activeHref && activeHref !== href) saveBookmark(activeHref);
+        activeHref = href;
+        updateHash(href);
+        mainTitle.textContent = doc.title;
+        mainMeta.textContent = '📅 ' + doc.date;
+        mainActions.innerHTML = `<a href="${href}" target="_blank">打开原始文件</a><button onclick="copyLink()">🔗 复制链接</button>`;
+        tree.querySelectorAll('.tree-row.active').forEach(r => r.classList.remove('active'));
+        const ae = tree.querySelector(`[data-href="${href}"]`);
+        if (ae) { const r = ae.querySelector('.tree-row'); if (r) r.classList.add('active'); }
+        if (f.type === 'md') loadMd(href);
+        else if (f.type === 'docx') loadDocx(href);
+        else {
+          welcome.style.display = 'none';
+          mainBody.classList.add('html-full');
+          mdContent.style.display = 'block';
+          mdContent.classList.add('html-view');
+          mainLoading.style.display = 'none';
+          mainError.style.display = 'none';
+          mdContent.innerHTML = `<iframe src="${href}" class="html-frame" sandbox="allow-scripts allow-same-origin"></iframe>`;
+        }
+        return;
+      }
+    }
+  }
+
+  // ====== 搜索 ======
+  let st;
   searchInput.addEventListener('input', function() {
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => {
+    clearTimeout(st);
+    st = setTimeout(() => {
       searchQuery = this.value.trim();
       searchCount.classList.toggle('visible', searchQuery.length > 0);
-      const data = buildTreeData(allDocs);
-      if (searchQuery) {
-        const totalMatch = allDocs.filter(d => fuzzyMatch(docMatchText(d), searchQuery)).length;
-        searchCount.textContent = `找到 ${totalMatch} 篇`;
-      }
-      renderTree(data);
+      if (searchQuery) searchCount.textContent = '找到 ' + allDocs.filter(d => fuzzyMatch(docMatchText(d), searchQuery)).length + ' 篇';
+      renderTree(buildTreeData(allDocs));
     }, 150);
   });
 
-  // 移动端
-  window.toggleSidebar = function() {
-    document.getElementById('sidebar').classList.toggle('open');
-    document.getElementById('overlay').classList.toggle('open');
-  };
-  window.closeSidebar = function() {
-    document.getElementById('sidebar').classList.remove('open');
-    document.getElementById('overlay').classList.remove('open');
-  };
+  // ====== 移动端 ======
+  window.toggleSidebar = function() { document.getElementById('sidebar').classList.toggle('open'); document.getElementById('overlay').classList.toggle('open'); };
+  window.closeSidebar = function() { document.getElementById('sidebar').classList.remove('open'); document.getElementById('overlay').classList.remove('open'); };
 
-  // 初始化
-  fetch('files.json')
-    .then(r => r.json())
-    .then(docs => {
-      allDocs = docs;
-      const total = docs.reduce((s, d) => s + d.files.length, 0);
-      statsEl.innerHTML = `<strong>${docs.length}</strong> 篇报告 · <strong>${total}</strong> 个文件`;
-      const data = buildTreeData(docs);
-      renderTree(data);
-    })
-    .catch(() => {
-      tree.innerHTML = '<div style="padding:20px;text-align:center;color:#ef4444;">⚠ 加载失败</div>';
-    });
+  // ====== 初始化 ======
+  fetch('files.json').then(r => r.json()).then(docs => {
+    allDocs = docs;
+    const total = docs.reduce((s, d) => s + d.files.length, 0);
+    statsEl.innerHTML = `<strong>${docs.length}</strong> 篇报告 · <strong>${total}</strong> 个文件`;
+    renderTree(buildTreeData(docs));
+    const hashHref = parseHash();
+    if (hashHref) loadByHref(hashHref);
+  }).catch(() => { tree.innerHTML = '<div style="padding:20px;text-align:center;color:#ef4444;">⚠ 加载失败</div>'; });
 
 })();
 </script>
