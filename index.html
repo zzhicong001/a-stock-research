@@ -10,11 +10,13 @@
     --text-secondary: #9ca3af; --accent: #f59e0b; --accent-dim: #d97706;
     --border: #2d3148; --tag-bg: #1e293b; --sidebar-width: 300px;
   }
-  * { margin:0; padding:0; box-sizing:border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+  html { overflow: hidden; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     background: var(--bg); color: var(--text); line-height: 1.6;
-    height: 100vh; overflow: hidden; display: flex;
+    height: 100dvh; overflow: hidden; display: flex;
+    -webkit-overflow-scrolling: touch;
   }
   .sidebar {
     width: var(--sidebar-width); min-width: var(--sidebar-width);
@@ -31,7 +33,7 @@
   .sidebar-search svg { position: absolute; left: 25px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; opacity: 0.4; pointer-events: none; }
   .search-result-count { text-align: center; font-size: 0.75em; color: var(--text-secondary); padding: 4px 0; border-bottom: 1px solid var(--border); flex-shrink: 0; display: none; }
   .search-result-count.visible { display: block; }
-  .sidebar-tree { flex: 1; overflow-y: auto; padding: 8px 0; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+  .sidebar-tree { flex: 1; overflow-y: auto; padding: 8px 0; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
   .sidebar-tree::-webkit-scrollbar { width: 5px; }
   .sidebar-tree::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
   .sidebar-footer { padding: 10px 14px; border-top: 1px solid var(--border); flex-shrink: 0; font-size: 0.72em; color: var(--text-secondary); text-align: center; }
@@ -115,13 +117,49 @@
   .menu-btn { display: none; position: fixed; top: 12px; left: 12px; z-index: 20; width: 36px; height: 36px; align-items: center; justify-content: center; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); cursor: pointer; font-size: 1.2em; }
   .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9; }
   @media (max-width: 768px) {
-    .menu-btn { display: flex; }
-    .sidebar { position: fixed; left: -100%; top: 0; bottom: 0; transition: left 0.25s; width: 280px; min-width: 280px; }
+    body { height: 100dvh; }
+    .sidebar { position: fixed; left: -100%; top: 0; bottom: 0; transition: left 0.25s; width: min(280px, 85vw); min-width: 0; height: 100dvh; }
     .sidebar.open { left: 0; }
+    .sidebar-header { padding: calc(16px + env(safe-area-inset-top, 0px)) 14px 12px; }
+    .sidebar-header h2 { font-size: 1.05em; }
     .overlay.open { display: block; }
-    .main-header { padding: 14px 16px 14px 52px; }
-    .main-body { padding: 0 12px 30px; }
-    .md-content table { display: block; overflow-x: auto; }
+
+    .menu-btn { display: flex; top: max(12px, env(safe-area-inset-top, 0px)); left: max(12px, env(safe-area-inset-left, 0px)); }
+
+    .tree-row { min-height: 40px; padding: 6px 12px; font-size: 0.9em; }
+    .tree-arrow { width: 24px; height: 24px; }
+    .tree-icon { width: 24px; }
+
+    .main-header { padding: 12px 12px 12px 48px; flex-wrap: wrap; gap: 6px; }
+    .main-header .doc-title { font-size: 1em; min-width: 100%; }
+    .main-header .doc-meta { font-size: 0.78em; }
+    .main-header .doc-actions { gap: 4px; }
+    .main-header .doc-actions a, .main-header .doc-actions button { padding: 6px 10px; font-size: 0.75em; }
+
+    .main-body { padding: 0 8px 40px; }
+    .main-body .md-content { padding-top: 12px; }
+    .md-content h1 { font-size: 1.35em; }
+    .md-content h2 { font-size: 1.15em; }
+    .md-content h3 { font-size: 1.0em; }
+    .md-content table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: calc(100vw - 24px); }
+    .md-content pre { max-width: calc(100vw - 24px); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .md-content img { max-width: 100%; height: auto; }
+    .html-frame { height: calc(100dvh - 100px); }
+
+    .bookmark-indicator { right: 12px; bottom: 20px; width: 40px; height: 40px; }
+
+    .copy-notice { top: max(16px, env(safe-area-inset-top, 0px)); right: 12px; font-size: 0.8em; padding: 6px 14px; }
+
+    .welcome h2 { font-size: 1.2em; }
+    .welcome .stats { flex-direction: column; gap: 8px; }
+
+    .search-result-count { font-size: 0.78em; }
+  }
+
+  @media (max-width: 380px) {
+    .sidebar { width: 85vw; }
+    .main-header .doc-title { font-size: 0.9em; }
+    .tree-row { font-size: 0.85em; min-height: 38px; }
   }
 </style>
 </head>
