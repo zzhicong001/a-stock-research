@@ -1,0 +1,10 @@
+{
+  "time": "2026-06-01T04:58:35.592Z",
+  "total": 5503,
+  "ok": 65,
+  "err": 5173,
+  "period": "daily",
+  "count": 250,
+  "adjust": "前复权",
+  "elapsed": "231s"
+}
