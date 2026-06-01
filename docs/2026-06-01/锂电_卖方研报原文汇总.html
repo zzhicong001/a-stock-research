@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>锂电行业 — 卖方研报原文汇总</title>
+<style>
+  :root{--bg:#f8f9fb;--card:#fff;--text:#1a1a2e;--text2:#555;--blue:#2563eb;--red:#dc2626;--green:#16a34a;--amber:#d97706;--border:#e5e7eb}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:20px 16px 60px}
+  .container{max-width:920px;margin:0 auto}
+  .hero{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px}
+  .hero h1{font-size:26px;font-weight:700;margin-bottom:8px}
+  .hero .sub{font-size:13px;color:#94a3b8;line-height:1.8}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.12);color:#fbbf24;font-size:11px;padding:2px 10px;border-radius:10px;margin-right:6px;font-weight:600}
+  .section{background:var(--card);border-radius:12px;padding:28px 32px;margin-bottom:16px;border:1px solid var(--border);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+  .section h2{font-size:19px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:8px}
+  .section h3{font-size:15px;color:var(--blue);margin:18px 0 10px}
+  .section h4{font-size:14px;color:var(--red);margin:12px 0 6px}
+  .rh{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px 20px;margin-bottom:16px}
+  .rh .rt{font-size:16px;font-weight:700;color:#166534;margin-bottom:4px}
+  .rh .rm{font-size:13px;color:#6b7280}
+  .rhb{background:#eff6ff;border-color:#bfdbfe}.rhb .rt{color:#1e40af}
+  .rha{background:#fffbeb;border-color:#fde68a}.rha .rt{color:#92400e}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+  th{background:#f1f5f9;font-weight:600;padding:10px 14px;text-align:left;font-size:13px;color:#475569;white-space:nowrap}
+  td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+  tr:hover td{background:#f8fafc}
+  .hl td{background:#fffbeb}.hl:hover td{background:#fef3c7}
+  .ticker{font-family:"SF Mono","Consolas",monospace;color:var(--blue);font-weight:600}
+  blockquote{border-left:3px solid var(--amber);padding:12px 18px;margin:12px 0;background:#fffbeb;border-radius:0 8px 8px 0;font-size:14px;color:#92400e}
+  blockquote.info{border-left-color:var(--blue);background:#eff6ff;color:#1e40af}
+  blockquote.red{border-left-color:var(--red);background:#fef2f2;color:#991b1b}
+  p{font-size:14px;color:var(--text2);margin:8px 0;line-height:1.8}
+  p strong{color:var(--text)}
+  .datacards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+  .dc{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px;text-align:center}
+  .dc.fire{background:#fef2f2;border-color:#fecaca}
+  .dc.blue{background:#eff6ff;border-color:#bfdbfe}
+  .dc .v{font-size:22px;font-weight:700;color:var(--green)}.dc .l{font-size:12px;color:#6b7280;margin-top:4px}
+  .dc.fire .v{color:var(--red)}.dc.blue .v{color:var(--blue)}
+  .compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0}
+  .cc{background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px}
+  .cc h5{font-size:14px;color:var(--blue);margin-bottom:6px}
+  .cc p{font-size:13px;margin:2px 0}
+  .stocks{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+  .stocks span{background:#eff6ff;color:#1e40af;font-size:12px;padding:3px 10px;border-radius:6px;font-weight:500}
+  .timeline{display:flex;gap:12px;margin:12px 0;flex-wrap:wrap}
+  .tl{flex:1;min-width:130px;text-align:center;padding:12px;border-radius:8px;border:1px solid var(--border)}
+  .tl .m{font-size:14px;font-weight:700}
+  .tl .d{font-size:12px;color:var(--text2);margin-top:4px}
+  .tl.up{border-color:#bbf7d0;background:#f0fdf4}.tl.up .m{color:var(--green)}
+  .note{font-size:13px;color:#6b7280;margin:12px 0;padding:12px 16px;background:#f8fafc;border-radius:8px}
+  footer{text-align:center;padding:24px 0 0;margin-top:32px;border-top:1px solid var(--border);color:#9ca3af;font-size:13px}
+  @media(max-width:640px){.hero{padding:22px 18px}.hero h1{font-size:20px}.section{padding:18px 14px}table{font-size:12px}th,td{padding:8px 10px}}
+</style>
+</head>
+<body><div class="container">
+<div class="hero">
+  <h1>锂电行业 — 卖方研报原文汇总</h1>
+  <div class="sub">
+    <span class="tag">华泰证券</span><span class="tag">中信证券</span><span class="tag">国信证券</span><span class="tag">中泰证券</span><span class="tag">东北证券</span>
+    整理时间：2026-06-01 | ⚠️ 下文均为券商研报原文引用，仅供参考
+  </div>
+</div>
+
+<!-- ===== 核心数据总览 ===== -->
+<div class="section">
+  <h2>锂电行业核心数据速览</h2>
+  <div class="datacards">
+    <div class="dc"><div class="v">249GWh</div><div class="l">5月中国锂电排产（创新高）</div></div>
+    <div class="dc"><div class="v">268GWh</div><div class="l">6月中国锂电排产（预排）</div></div>
+    <div class="dc fire"><div class="v">+7.6%</div><div class="l">6月排产环比增幅</div></div>
+    <div class="dc blue"><div class="v">42.3%</div><div class="l">储能电芯排产占比</div></div>
+    <div class="dc fire"><div class="v">17.75万</div><div class="l">碳酸锂均价（元/吨）</div></div>
+    <div class="dc blue"><div class="v">0.362</div><div class="l">314Ah储能电芯（元/Wh）</div></div>
+  </div>
+  <div class="timeline">
+    <div class="tl"><div class="m">5月</div><div class="d">排产249GWh<br>环比+6%</div></div>
+    <div class="tl up"><div class="m">6月</div><div class="d">预排268GWh<br>环比+7.6%</div></div>
+    <div class="tl up"><div class="m">7月</div><div class="d">预计环比+10%+<br>进入最强旺季</div></div>
+    <div class="tl up"><div class="m">Q3</div><div class="d">排产增速≥15%<br>全链扩产高峰</div></div>
+  </div>
+</div>
+
+<!-- ===== 1. 国信证券 ===== -->
+<div class="section">
+  <div class="rh rhb"><div class="rt">研报一：国信证券 — 锂电池产业链双周报（2026年5月第3期）</div><div class="rm">发布时间：2026年5月29日 · 分析师：王蔚祺、李全</div></div>
+
+  <h3>6月锂电池预排产数据（鑫椤锂电）</h3>
+  <table>
+    <tr><th>环节</th><th>样本企业</th><th>预排产量</th><th>同比</th><th>环比</th></tr>
+    <tr class="hl"><td><strong>电池</strong></td><td>6家</td><td><strong>175.7 GWh</strong></td><td><strong>+68%</strong></td><td><strong>+6%</strong></td></tr>
+    <tr class="hl"><td>正极</td><td>6家</td><td>22.9万吨</td><td>+60%</td><td>+4%</td></tr>
+    <tr class="hl"><td>负极</td><td>4家</td><td>18.6万吨</td><td>+51%</td><td>+1%</td></tr>
+    <tr><td>隔膜</td><td>3家</td><td>21.8亿平</td><td>+53%</td><td>+1%</td></tr>
+    <tr><td>电解液</td><td>2家</td><td>12.4万吨</td><td>+69%</td><td>+2%</td></tr>
+  </table>
+  <blockquote class="info">全产业链排产同比增幅均在50%以上，电解液同比增幅最高（+69%），电池排产环比增幅最大（+6%），整体呈现量价齐升态势。</blockquote>
+
+  <h3>锂电材料价格走势（截至5月29日）</h3>
+  <table>
+    <tr><th>品类</th><th>最新报价</th><th>较两周前</th><th>趋势</th></tr>
+    <tr class="hl"><td>碳酸锂</td><td>17.75万元/吨</td><td>-1.45万元/吨</td><td>🔻震荡回落</td></tr>
+    <tr class="hl"><td>六氟磷酸锂</td><td>—</td><td>上涨</td><td>🔺</td></tr>
+    <tr class="hl"><td>电解液</td><td>—</td><td>上涨</td><td>🔺</td></tr>
+    <tr><td>隔膜</td><td>—</td><td>上涨</td><td>🔺</td></tr>
+    <tr><td>磷酸铁锂正极</td><td>—</td><td>下跌</td><td>🔻</td></tr>
+    <tr><td>负极</td><td>—</td><td>稳定</td><td>➡️</td></tr>
+  </table>
+
+  <h3>电芯报价</h3>
+  <table>
+    <tr><th>电芯类型</th><th>报价（元/Wh）</th><th>较两周前变动</th></tr>
+    <tr class="hl"><td>储能用314Ah</td><td>0.362</td><td><strong>+0.005</strong></td></tr>
+    <tr class="hl"><td>储能用100Ah</td><td>0.418</td><td>+0.006</td></tr>
+    <tr><td>铁锂动力电芯</td><td>0.385</td><td>+0.002</td></tr>
+    <tr><td>方形三元动力</td><td>0.608</td><td>+0.001</td></tr>
+  </table>
+
+  <h3>材料企业大规模扩产动态</h3>
+  <table>
+    <tr><th>企业</th><th>项目</th><th>投资</th><th>内容</th></tr>
+    <tr class="hl"><td>德方纳米</td><td>云南禄劝</td><td><strong>63亿</strong></td><td>年产30万吨磷酸盐正极+27万吨硝酸配套</td></tr>
+    <tr class="hl"><td>璞泰来</td><td>隔膜项目</td><td><strong>56亿</strong></td><td>年产72亿平隔膜</td></tr>
+    <tr><td>德方纳米</td><td>曲靖</td><td>24亿</td><td>20万吨/年磷酸盐新材料</td></tr>
+    <tr><td>天赐材料</td><td>磷酸铁锂</td><td>21亿</td><td>年产16万吨高压实磷酸铁锂</td></tr>
+    <tr><td>德福科技</td><td>高端铜箔</td><td>31亿</td><td>5万吨高端AI铜箔</td></tr>
+  </table>
+
+  <h3>国信证券推荐方向</h3>
+  <blockquote>需求向好背景下估值较低的锂电行业领先企业：宁德时代、亿纬锂能、中创新航、湖南裕能、万润新能、天赐材料、新宙邦、璞泰来、恩捷股份、星源材质、珠海冠宇、豪鹏科技、天能股份。固态电池与钠电池布局领先企业：厦钨新能、当升科技、天奈科技、中伟新材。</blockquote>
+</div>
+
+<!-- ===== 2. 华泰证券 ===== -->
+<div class="section">
+  <div class="rh"><div class="rt">研报二：华泰证券 — 继续看好本轮锂电涨价周期</div><div class="rm">发布时间：2026年5月18日（CIBF展会后）</div></div>
+
+  <h3>核心观点（原文引用）</h3>
+  <blockquote>5月13日-15日，CIBF2026第十八届深圳国际电池技术交流会/展览会于深圳国际会展中心举办，展会全面覆盖动力电池、储能电池、关键材料、智能装备等全产业链赛道，三天专业观众流量突破40万。参与展会交流后，华泰证券认为<strong>锂电全产业链需求向好态势较强，新技术不断创新突破，继续看好本轮锂电涨价周期</strong>，同时看好钠电池及固态电池从1到N产业趋势。</blockquote>
+
+  <h3>展会核心观察（原文引用）</h3>
+  <p>展会上电池厂普遍反馈下游需求较好，且成本传导较为顺利（根据SMM，<strong>314Ah储能电芯在5月15日已上涨至0.36元/Wh</strong>），我们认为行业仍处在<strong>全产业链涨价的上行周期</strong>。根据鑫椤锂电数据，样本电池企业5月排产172.4GWh，环比+9.4%。</p>
+  <p><strong>需求驱动力：</strong>①国内外储能需求维持强劲；②油价高位刺激海外汽车电动化；③国内乘用车带电量快速增长。</p>
+</div>
+
+<!-- ===== 3. 中信证券 ===== -->
+<div class="section">
+  <div class="rh rha"><div class="rt">研报三：中信证券 — 供需利好共振，锂价上方空间打开</div><div class="rm">发布时间：2026年5月12日 | 前期展望：2025年11月24日</div></div>
+
+  <h3>供应端分析（原文引用）</h3>
+  <p>近期非洲锂资源供应扰动未解除，国内锂云母供应或迎来新的变量，Greenbushes锂矿下调全年产量指引，南美锂盐出口边际增量下滑，<strong>未来2-3个月供应整体收缩</strong>。</p>
+
+  <h3>需求端分析</h3>
+  <p>2026年动力及储能电池需求超预期，<strong>5月份锂电排产环比增加</strong>。</p>
+
+  <h3>价格预测（原文引用）</h3>
+  <blockquote class="red">供需利好共振有望推动锂价在未来<strong>2-3个月上涨至25万元/吨</strong>。</blockquote>
+
+  <h3>中信证券2026年度展望（2025年11月原文）</h3>
+  <blockquote class="info">展望2026年，锂电行业整体供需结构有望进一步改善。需求端，受益电动化渗透率进一步提升叠加单车带电量的显著增长，全球动力电池需求有望保持稳定增长；电池成本下降、收益模式丰富、融资成本下降等因素推动储能装机经济性显著提升，全球储能迎来国内外需求共振向上的发展阶段。供给端，电池和中游材料环节资本开支收缩，产能利用率提升。</blockquote>
+</div>
+
+<!-- ===== 4. 中泰证券 ===== -->
+<div class="section">
+  <div class="rh rhb"><div class="rt">研报四：中泰证券 — 锂电排产连续三月刷新历史峰值</div><div class="rm">发布时间：2026年4月27日 · 5月排产数据</div></div>
+
+  <h3>排产数据（原文引用）</h3>
+  <table>
+    <tr><th>指标</th><th>数据</th></tr>
+    <tr class="hl"><td>5月中国锂电排产总量</td><td><strong>约249GWh</strong>，环比+6.0%</td></tr>
+    <tr class="hl"><td>5月全球电池产量</td><td><strong>约262GWh</strong>，环比+5.6%</td></tr>
+    <tr class="hl"><td>储能电芯排产占比</td><td><strong>42.3%</strong>（成为需求增长最大亮点）</td></tr>
+    <tr><td>三元电芯排产占比</td><td>14.7%</td></tr>
+  </table>
+
+  <h3>头部企业排产（中泰证券数据）</h3>
+  <table>
+    <tr><th>电池企业</th><th>5月排产量</th></tr>
+    <tr class="hl"><td>锂电池A（宁德时代）</td><td>90.0 GWh</td></tr>
+    <tr><td>锂电池B</td><td>28.5 GWh</td></tr>
+    <tr><td>锂电池C</td><td>17.0 GWh</td></tr>
+  </table>
+  <blockquote class="info">中国电池排产已连续三个月刷新历史峰值。新能源汽车与储能需求的双轮驱动格局日益清晰。</blockquote>
+</div>
+
+<!-- ===== 5. 东北证券 ===== -->
+<div class="section">
+  <div class="rh"><div class="rt">研报五：东北证券 — 锂矿供需缺口将持续存在</div><div class="rm">发布时间：2026年5月（引自天齐锂业报道）</div></div>
+
+  <h3>核心观点（原文引用）</h3>
+  <blockquote class="red">东北证券研报指出，在不考虑江西矿证不合规问题及津巴布韦禁止锂精矿出口影响不可控的情况下，预计<strong>2026至2027年将会持续存在硬性缺口</strong>；考虑江西矿证不合规问题影响及津巴布韦禁止锂精矿出口影响，<strong>行业供需缺口将会进一步拉大</strong>。</blockquote>
+
+  <h3>行业价格参考</h3>
+  <table>
+    <tr><th>指标</th><th>数据</th><th>来源</th></tr>
+    <tr class="hl"><td>碳酸锂期货年度涨幅</td><td><strong>约186%</strong></td><td>上海钢联</td></tr>
+    <tr class="hl"><td>碳酸锂现货年度涨幅</td><td><strong>超205%</strong></td><td>上海钢联</td></tr>
+    <tr><td>价格中枢预估</td><td>15万元/吨</td><td>上海钢联分析师</td></tr>
+    <tr><td>震荡区间</td><td>12-25万元/吨</td><td>上海钢联分析师</td></tr>
+  </table>
+  <blockquote>天齐锂业在5月20日业绩会上表示：2026年全球锂行业供需关系整体预计将处于紧平衡状态，呈现"需求持续增长、供给阶段性扰动"的特征。</blockquote>
+</div>
+
+<!-- ===== 6. 产业综合 ===== -->
+<div class="section">
+  <h2>产业综合数据：6月排产再超预期</h2>
+  <div class="rh rha"><div class="rt">大东时代智库（TD）：2026年6月电池排产预判</div><div class="rm">发布时间：2026年5月31日 · 中国268GWh，全球281GWh</div></div>
+
+  <div class="datacards">
+    <div class="dc"><div class="v">268GWh</div><div class="l">6月中国锂电排产</div></div>
+    <div class="dc fire"><div class="v">+7.6%</div><div class="l">环比增幅</div></div>
+    <div class="dc blue"><div class="v">41.4%</div><div class="l">储能电芯占比</div></div>
+    <div class="dc"><div class="v">281GWh</div><div class="l">6月全球排产</div></div>
+  </div>
+
+  <h3>产业链扩产全面启动</h3>
+  <blockquote class="info">6月全球锂电池整体排产达257GWh（另一口径），环比提升9.0%。储能刚需爆发+海外需求回暖的强力拉动下，6月主流电池厂商排产再度上修。7月起行业排产增速将持续走高，Q3整体排产环比增速不低于15%，锂电上下游正式迎来阶段性扩产高峰。</blockquote>
+
+  <h3>盈利能力改善</h3>
+  <p>2026年一季度动力电池毛利率环比大幅改善至<strong>18.52%</strong>，储能电池净利率环比大幅提升，行业盈利能力持续修复。</p>
+
+  <h3>新能源车终端销量（4月）</h3>
+  <table>
+    <tr><th>区域</th><th>销量</th><th>同比</th><th>渗透率</th></tr>
+    <tr class="hl"><td><strong>欧洲九国</strong></td><td><strong>29.08万辆</strong></td><td><strong>+36%</strong></td><td>32.4%（+6.2pct）</td></tr>
+    <tr><td>国内</td><td>134.4万辆</td><td>+10%</td><td>53.2%（+5.9pct）</td></tr>
+    <tr><td>美国</td><td>8.61万辆</td><td>-32%</td><td>6.3%（-2.4pct）</td></tr>
+  </table>
+</div>
+
+<!-- ===== 受益标的全景 ===== -->
+<div class="section">
+  <h2>锂电全链卖方推荐标的汇总</h2>
+  <table>
+    <tr><th>环节</th><th>核心标的</th><th>推荐券商</th></tr>
+    <tr class="hl"><td><strong>电池</strong></td><td>宁德时代、亿纬锂能、中创新航、珠海冠宇</td><td>国信证券、华泰证券</td></tr>
+    <tr class="hl"><td><strong>正极</strong></td><td>湖南裕能、万润新能、德方纳米、当升科技、厦钨新能</td><td>国信证券</td></tr>
+    <tr class="hl"><td><strong>电解液/六氟</strong></td><td>天赐材料、新宙邦</td><td>国信证券</td></tr>
+    <tr><td><strong>隔膜</strong></td><td>恩捷股份、星源材质、璞泰来</td><td>国信证券</td></tr>
+    <tr><td><strong>锂资源</strong></td><td>天齐锂业</td><td>中信证券、东北证券（供需缺口利好）</td></tr>
+    <tr><td><strong>固态/钠电</strong></td><td>天奈科技、中伟新材</td><td>华泰证券、国信证券</td></tr>
+    <tr><td><strong>充电桩</strong></td><td>特锐德、盛弘股份</td><td>国信证券</td></tr>
+  </table>
+</div>
+
+<footer>
+  以上内容均来自国信证券（2026.05.29）、华泰证券（2026.05.18）、中信证券（2026.05.12/2025.11）、中泰证券（2026.04）、东北证券（2026.05）及大东时代智库等公开研报原文引用<br>
+  整理时间：2026-06-01 · A股研报共享站点 · <span style="color:var(--red)">免责声明：不构成投资建议，仅供参考</span>
+</footer>
+
+</div></body></html>
