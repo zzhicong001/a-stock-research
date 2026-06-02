@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6.2逻辑梳理 — 2026-06-02</title>
+<style>
+  :root{--bg:#f8f9fb;--card:#fff;--text:#1a1a2e;--text2:#555;--blue:#2563eb;--red:#dc2626;--green:#16a34a;--amber:#d97706;--border:#e5e7eb}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:20px 16px 60px}
+  .container{max-width:960px;margin:0 auto}
+  .hero{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:24px}
+  .hero h1{font-size:26px;font-weight:700;margin-bottom:8px}
+  .hero .sub{font-size:13px;color:#94a3b8;line-height:1.8}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.12);color:#fbbf24;font-size:11px;padding:2px 10px;border-radius:10px;margin-right:6px;font-weight:600}
+  .section{background:var(--card);border-radius:12px;padding:24px 32px;margin-bottom:16px;border:1px solid var(--border);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+  .section h2{font-size:19px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+  th{background:#f1f5f9;font-weight:600;padding:10px 14px;text-align:left;font-size:13px;color:#475569;white-space:nowrap}
+  td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+  tr:hover td{background:#f8fafc}
+  .hl td{background:#fffbeb}.hl:hover td{background:#fef3c7}
+  .ticker{font-family:"SF Mono","Consolas",monospace;color:var(--blue);font-weight:600}
+
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+  .b-ai{background:#fee2e2;color:#dc2626}.b-mlcc{background:#f3e8ff;color:#7c3aed}
+  .b-fiber{background:#dbeafe;color:#2563eb}.b-semi{background:#dcfce7;color:#16a34a}
+  .b-robot{background:#fffbeb;color:#d97706}.b-power{background:#e0f2fe;color:#0369a1}
+  .b-property{background:#fce7f3;color:#9d174d}.b-other{background:#f1f5f9;color:#475569}
+
+  .hot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0}
+  .hc{background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:14px}
+  .hc h5{font-size:14px;color:var(--red);margin-bottom:4px}
+  .hc p{font-size:12px;color:var(--text2)}
+
+  .note{font-size:13px;color:#6b7280;padding:10px 16px;background:#f8fafc;border-radius:8px;margin-bottom:16px}
+  footer{text-align:center;padding:24px 0 0;margin-top:32px;border-top:1px solid var(--border);color:#9ca3af;font-size:13px}
+  @media(max-width:640px){.hero{padding:22px 18px}.hero h1{font-size:20px}.section{padding:18px 14px}table{font-size:12px}}
+</style>
+</head>
+<body><div class="container">
+<div class="hero">
+  <h1>6.2 逻辑梳理</h1>
+  <div class="sub">
+    <span class="tag">MLCC</span><span class="tag">CPO</span><span class="tag">Marvell</span><span class="tag">液冷</span><span class="tag">机器人</span><span class="tag">光纤</span>
+    2026-06-02 21:30 · 浙江 · 21条精选逻辑
+  </div>
+</div>
+<div class="note">内容来源于韭研公社，仅供研究参考，不构成投资建议</div>
+
+<div class="section">
+  <h2>全部 21 条逻辑梳理</h2>
+  <table>
+    <tr><th style="width:36px">#</th><th style="width:110px">标的</th><th>核心逻辑</th><th style="width:80px">方向</th></tr>
+
+    <tr class="hl">
+      <td>1</td>
+      <td class="ticker">顺景科技</td>
+      <td>通过100%全资子公司以51%持股控股<strong>苏州顺景光通讯</strong>，实现业绩完全并入上市公司报表，实打实的控股经营而非简单参股</td>
+      <td><span class="badge b-mlcc">光通信</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="ticker">四环生物</td>
+      <td>低价+摘帽，生物医药+园林绿化双主业。主营苗木、EPO注射液、G-CSF、注射用白介素-2</td>
+      <td><span class="badge b-other">摘帽</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="ticker">华远控股</td>
+      <td>低价地产。实控人北京西城区国资委正筹划下属企业集团重组，可能涉及控股股东华远集团</td>
+      <td><span class="badge b-property">国资重组</span></td>
+    </tr>
+    <tr class="hl">
+      <td>4</td>
+      <td class="ticker">中大力德</td>
+      <td><strong>宇树第一大减速器供应商</strong>，占宇树减速器采购63%。已锁定32亿长单。催化：宇树过会 + 黄仁勋联手宇树打造1.8米人形机器人（英伟达提供"大脑"，宇树造"身体"）</td>
+      <td><span class="badge b-robot">机器人</span></td>
+    </tr>
+    <tr class="hl">
+      <td>5</td>
+      <td class="ticker">意华股份</td>
+      <td>互动易官宣研发<strong>液冷cage</strong>（华为昇腾，26H2放量），产业链判断可能是<strong>华为体系液冷cage独供</strong></td>
+      <td><span class="badge b-ai">液冷</span></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td class="ticker">美迪凯</td>
+      <td><strong>12寸玻璃晶圆批量出货</strong>，已成功切入三星供应链体系</td>
+      <td><span class="badge b-semi">半导体</span></td>
+    </tr>
+    <tr class="hl">
+      <td>7</td>
+      <td class="ticker">麦格米特</td>
+      <td>GTC-MGX生态战略合作伙伴，HVDC出展+Rubin测试加速。5月29日受邀参加NV台北GTC MGX生态大会，展出HVDC Sidecar产品，已具备推广条件</td>
+      <td><span class="badge b-power">AI电源</span></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td class="ticker">远东股份</td>
+      <td>与安捷诺AIDC长协订单落地，5月大单突破近1.5亿元</td>
+      <td><span class="badge b-power">AIDC</span></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td class="ticker">韶能股份</td>
+      <td>高温，电力持续性。电力板块情绪标的</td>
+      <td><span class="badge b-power">电力</span></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td class="ticker">群兴玩具</td>
+      <td>腾讯算力标的。腾讯大涨，更接近推出一款面向微信14亿中国用户的AI代理</td>
+      <td><span class="badge b-ai">算力</span></td>
+    </tr>
+    <tr class="hl">
+      <td>11</td>
+      <td class="ticker">达利凯普</td>
+      <td><strong>全球第五、国内第一的射频微波MLCC龙头</strong>。车规级产品（毫米波雷达/ADAS/车联网）处于认证突破与需求爆发关键节点，<strong>涨价空间预计30%-50%</strong></td>
+      <td><span class="badge b-mlcc">MLCC</span></td>
+    </tr>
+    <tr class="hl">
+      <td>12</td>
+      <td class="ticker">亨通光电</td>
+      <td>即将突破北美CSP厂。北美光纤紧缺，CSP加速导入中国厂商。此前仅长飞能出北美，近期基本确定亨通与<strong>G客户和O客户签订长协</strong>，有望大幅拔估值</td>
+      <td><span class="badge b-fiber">光纤</span></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td class="ticker">贵研铂业</td>
+      <td>被严重低估的半导体贵金属隐形龙头。电子布铂铑漏板+磷化铟温控双刚需标的，两条高景气主赛道绝对核心上游</td>
+      <td><span class="badge b-semi">半导体材料</span></td>
+    </tr>
+    <tr class="hl">
+      <td>14</td>
+      <td class="ticker">深圳华强</td>
+      <td>高盛称<strong>MLCC已成AI服务器BOM第三大成本项</strong>（仅次于GPU和存储）。分销龙头，MLCC+硅电容+钼电容+昇腾服务器经销，多热点聚于一身</td>
+      <td><span class="badge b-mlcc">MLCC</span></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td class="ticker">北投科技</td>
+      <td>平陆运河"世纪工程"，总投资超700亿元，打通西江航运干线与北部湾港</td>
+      <td><span class="badge b-other">基建</span></td>
+    </tr>
+    <tr class="hl">
+      <td>16</td>
+      <td class="ticker">圣泉集团</td>
+      <td>Q2环比改善，涨价落地（小客户30%、大客户10%）。CCL上游相对低位，绑定生益科技，<strong>正交背板确定性看翻倍</strong></td>
+      <td><span class="badge b-mlcc">PCB上游</span></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td class="ticker">大胜达</td>
+      <td>控股芯瞳，<strong>第三代GPU流片成功</strong>，有可能成为第二个东芯</td>
+      <td><span class="badge b-semi">GPU</span></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td class="ticker">华锡有色</td>
+      <td><strong>算力金属锡继续暴涨</strong>。关联：锡业股份、兴业银锡、飞南资源</td>
+      <td><span class="badge b-power">有色金属</span></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td class="ticker">金字火腿</td>
+      <td>收购中晟微电子，<strong>400G/800G速率批量出货</strong>，国内唯一实现单波100G电芯片量产的企业，打破国外垄断</td>
+      <td><span class="badge b-mlcc">光芯片</span></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td class="ticker">宇环数控</td>
+      <td>折叠屏设备。催化：苹果首款折叠屏iPhone Fold将于6月25日正式进入量产阶段</td>
+      <td><span class="badge b-other">消费电子</span></td>
+    </tr>
+    <tr class="hl">
+      <td>21</td>
+      <td class="ticker">鑫科材料</td>
+      <td>控股子公司拓鑫智连，<strong>ACC系列1.6T产品是和Marvell深度开发的一种方案</strong></td>
+      <td><span class="badge b-ai">Marvell链</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- 方向汇总 -->
+<div class="section">
+  <h2>方向热点分布</h2>
+  <div class="hot-grid">
+    <div class="hc"><h5>MLCC/被动元件</h5><p>达利凯普（射频MLCC龙头+30-50%涨价）、深圳华强（分销+昇腾）、圣泉集团（CCL上游翻倍）</p></div>
+    <div class="hc"><h5>Marvell/光通信链</h5><p>鑫科材料（1.6T ACC）、顺景科技（光通讯控股）、金字火腿（100G电芯片）</p></div>
+    <div class="hc"><h5>AI电源/液冷</h5><p>麦格米特（GTC-MGX+HVDC+Rubin）、意华股份（华为液冷cage独供）</p></div>
+    <div class="hc"><h5>机器人</h5><p>中大力德（宇树63%份额+32亿长单+黄仁勋联手）</p></div>
+    <div class="hc"><h5>光纤出海</h5><p>亨通光电（突破北美CSP+G/O客户长协）、远东股份（AIDC 1.5亿大单）</p></div>
+    <div class="hc"><h5>其他亮点</h5><p>美迪凯（12寸玻璃晶圆）、大胜达（GPU流片）、贵研铂业（磷化铟上游）</p></div>
+  </div>
+</div>
+
+<footer>
+  来源：韭研公社 · 2026-06-02 · 整理时间：2026-06-03 · A股研报共享站点 · 不构成投资建议
+</footer>
+
+</div></body></html>
