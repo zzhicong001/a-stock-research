@@ -1,5 +1,20 @@
 [
   {
+    "title": "A股 6月3日盘前重要纪要",
+    "date": "2026-06-03",
+    "desc": "6月2日，NVIDIA宣布Spectrum-X Ethernet Photonics全面量产，新一代交换机基于硅光+CPO架构打造，支持Vera Rubin AI Factory大规模横向扩展与跨区域…",
+    "tags": [
+      "AI算力"
+    ],
+    "files": [
+      {
+        "name": "HTML",
+        "href": "docs/2026-06-03/A股6月3日盘前重要纪要.html",
+        "type": "html"
+      }
+    ]
+  },
+  {
     "title": "6.2逻辑梳理 — 2026-06-02",
     "date": "2026-06-02",
     "desc": "达利凯普（射频MLCC龙头+30-50%涨价）、深圳华强（分销+昇腾）、圣泉集团（CCL上游翻倍）",
